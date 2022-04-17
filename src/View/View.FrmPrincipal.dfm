@@ -13,6 +13,7 @@ object FrmPrincipal: TFrmPrincipal
   Menu = MainMenu
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object pnPrincipal: TPanel

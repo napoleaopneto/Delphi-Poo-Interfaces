@@ -1,0 +1,10 @@
+unit Controller.Conexao;
+
+interface
+
+  type
+   TControllerConexao = class(tin)
+
+implementation
+
+end.

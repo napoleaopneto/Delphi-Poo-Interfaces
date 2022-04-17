@@ -12,7 +12,11 @@ uses
   View.Compras.Cadastros.Produtos in 'View\Compras\View.Compras.Cadastros.Produtos.pas' {FrmCadProdutos},
   View.Vendas.Cadastros.Clientes in 'View\Vendas\View.Vendas.Cadastros.Clientes.pas' {FrmCadClientes},
   View.Financeiro.Cadastros.Bancos in 'View\Financeiro\View.Financeiro.Cadastros.Bancos.pas' {FrmCadBancos},
-  View.RH.Cadastros.Funcionarios in 'View\RH\View.RH.Cadastros.Funcionarios.pas' {FrmCadFuncionarios};
+  View.RH.Cadastros.Funcionarios in 'View\RH\View.RH.Cadastros.Funcionarios.pas' {FrmCadFuncionarios},
+  Interfaces.Conexao in 'Interfaces\Interfaces.Conexao.pas',
+  Model.Conexao in 'Model\Model.Conexao.pas',
+  Interfaces.Controller.Conexao in 'Interfaces\Interfaces.Controller.Conexao.pas',
+  Controller.Conexao in 'Controller\Controller.Conexao.pas';
 
 {$R *.res}
 

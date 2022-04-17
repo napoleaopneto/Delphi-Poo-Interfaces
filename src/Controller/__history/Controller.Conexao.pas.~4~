@@ -1,0 +1,13 @@
+unit Controller.Conexao;
+
+interface
+
+  uses
+    Interfaces.Conexao;
+
+  type
+   TControllerConexao = class(TInterfacedObject,iConexao)
+
+implementation
+
+end.

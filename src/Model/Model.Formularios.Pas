@@ -8,7 +8,9 @@ uses
  View.Utilitarios.Cadastros.Usuarios,
  View.Compras.Cadastros.Produtos,
  View.Vendas.Cadastros.Clientes,
- View.Financeiro.Cadastros.Bancos, View.RH.Cadastros.Funcionarios;
+ View.Financeiro.Cadastros.Bancos,
+ View.RH.Cadastros.Funcionarios;
+
   type
     TFormulario = class(TInterfacedObject, iFormularios)
       private

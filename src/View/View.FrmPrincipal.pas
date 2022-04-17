@@ -16,7 +16,8 @@ uses
   Vcl.ExtCtrls,
   Vcl.Menus,
   Vcl.StdCtrls,
-  Controller.Formularios;
+  Controller.Formularios,
+  Controller.Conexao;
 
 type
   TFrmPrincipal = class(TForm)
@@ -43,6 +44,7 @@ type
     procedure mFinanceiroCadastros_BancosClick(Sender: TObject);
     procedure mRHCadastros_FuncionariosClick(Sender: TObject);
     procedure mUtilitariosCadastrosUsuariosClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,6 +57,13 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmPrincipal.FormCreate(Sender: TObject);
+begin
+  TControllerConexao
+   .New
+    .Conexao;
+end;
 
 procedure TFrmPrincipal.mComprasCadastros_ProdutosClick(Sender: TObject);
 begin
