@@ -1,0 +1,17 @@
+unit Interfaces.Controller.Crud;
+
+interface
+
+ uses
+   Interfaces.Crud;
+
+ type
+   iControllerCrud = interface
+     ['{B8452494-CA46-45BE-99EE-A3A6BD1CD8E3}']
+     function Crud : iConexao;
+   end;
+
+
+implementation
+
+end.

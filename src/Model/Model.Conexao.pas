@@ -56,6 +56,7 @@ begin
   begin
     FConexao := TFDConnection.Create(nil);
     FConexao.DriverName := 'SQLite';
+    FConexao.Params.Add('LockingMode=Normal');
     FConexao.Params.Database := ExtractFilePath(Application.ExeName) + 'Banco\Banco.db';
     FConexao.Connected := True;
   end

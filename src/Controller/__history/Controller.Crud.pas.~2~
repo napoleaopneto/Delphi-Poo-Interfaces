@@ -1,0 +1,15 @@
+unit Controller.Crud;
+
+interface
+
+  uses
+    Interfaces.Controller.Crud;
+
+  type
+   TControllerCrud = class(TInterfacedObject, iControllerCrud)
+
+   end;
+
+implementation
+
+end.

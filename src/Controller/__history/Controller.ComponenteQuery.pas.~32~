@@ -1,0 +1,47 @@
+unit Controller.ComponenteQuery;
+
+interface
+
+  uses
+    Interfaces.Controller.ComponenteQuery,
+    Interfaces.ComponenteQuery,
+    Model.ComponenteQuery;
+
+  type
+   TControllerComponenteQuery = Class(TInterfacedObject, iControllerComponenteQuery)
+     private
+     public
+     Constructor Create;
+     Destructor Destroy; override;
+     class function New : iControllerComponenteQuery;
+     function Query : iQuery;
+   End;
+
+implementation
+
+{ TContrllerComponenteQuery }
+
+{ TContrllerComponenteQuery }
+
+constructor TContrllerComponenteQuery.Create;
+begin
+
+end;
+
+destructor TContrllerComponenteQuery.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TContrllerComponenteQuery.New: iControllerComponenteQuery;
+begin
+  Result := Self.Create;
+end;
+
+function TContrllerComponenteQuery.Query: iQuery;
+begin
+  Result := TQuery.New(nil);
+end;
+
+end.

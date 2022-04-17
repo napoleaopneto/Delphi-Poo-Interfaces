@@ -1,0 +1,16 @@
+unit Interfaces.Query;
+
+interface
+
+  uses
+    Data.DB;
+
+  type
+    iQuery = interface
+      ['{4F1636FC-CAB1-4478-AF6E-0227E8F05829}']
+      function SQL(aValue : String) : iQuery;
+    end;
+
+implementation
+
+end.

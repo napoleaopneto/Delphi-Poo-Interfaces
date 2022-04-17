@@ -16,7 +16,15 @@ uses
   Interfaces.Conexao in 'Interfaces\Interfaces.Conexao.pas',
   Model.Conexao in 'Model\Model.Conexao.pas',
   Interfaces.Controller.Conexao in 'Interfaces\Interfaces.Controller.Conexao.pas',
-  Controller.Conexao in 'Controller\Controller.Conexao.pas';
+  Controller.Conexao in 'Controller\Controller.Conexao.pas',
+  Interfaces.ComponenteQuery in 'Interfaces\Interfaces.ComponenteQuery.pas',
+  Model.ComponenteQuery in 'Model\Model.ComponenteQuery.pas',
+  Controller.ComponenteQuery in 'Controller\Controller.ComponenteQuery.pas',
+  Interfaces.Controller.ComponenteQuery in 'Interfaces\Interfaces.Controller.ComponenteQuery.pas',
+  Interfaces.Crud in 'Interfaces\Interfaces.Crud.pas',
+  Model.Crud in 'Model\Model.Crud.pas',
+  Interfaces.Controller.Crud in 'Interfaces\Interfaces.Controller.Crud.pas',
+  Controller.Crud in 'Controller\Controller.Crud.pas';
 
 {$R *.res}
 
@@ -25,10 +33,5 @@ begin
   ReportMemoryLeaksOnShutdown := true;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
-  Application.CreateForm(TFrmCadProdutos, FrmCadProdutos);
-  Application.CreateForm(TFrmCadProdutos, FrmCadProdutos);
-  Application.CreateForm(TFrmCadClientes, FrmCadClientes);
-  Application.CreateForm(TFrmCadBancos, FrmCadBancos);
-  Application.CreateForm(TFrmCadFuncionarios, FrmCadFuncionarios);
   Application.Run;
 end.

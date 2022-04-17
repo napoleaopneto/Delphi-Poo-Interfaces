@@ -17,7 +17,8 @@ uses
   Vcl.Menus,
   Vcl.StdCtrls,
   Controller.Formularios,
-  Controller.Conexao;
+  Controller.Conexao,
+  Controller.ComponenteQuery;
 
 type
   TFrmPrincipal = class(TForm)
