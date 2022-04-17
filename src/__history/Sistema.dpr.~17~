@@ -1,0 +1,21 @@
+program Sistema;
+
+uses
+  Vcl.Forms,
+  View.FrmPrincipal in 'View\View.FrmPrincipal.pas' {FrmPrincipal},
+  uFrmPadrao in 'View\FormPadrao\uFrmPadrao.pas' {FrmPadrao},
+  Interfaces.Formularios in 'Interfaces\Interfaces.Formularios.pas',
+  Interfaces.Controller.Formularios in 'Interfaces\Interfaces.Controller.Formularios.pas',
+  Controller.Formularios in 'Controller\Controller.Formularios.pas',
+  Model.Formularios in 'Model\Model.Formularios.Pas',
+  View.Utilitarios.Cadastros.Usuarios in 'View\Utilitarios\View.Utilitarios.Cadastros.Usuarios.pas' {FrmCadUsuarios};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  ReportMemoryLeaksOnShutdown := true;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+end.

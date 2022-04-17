@@ -1,0 +1,20 @@
+unit Model.Fornularios;
+
+interface
+
+uses
+ Vcl.Forms,
+ Interfaces.Formularios;
+
+  type
+    tFormulario = class(TInterfacedObject, iFormularios)
+      private
+      public
+      constructor create;
+      destructor destroy : override;
+      class function New : iFormularios
+    end;
+
+implementation
+
+end.

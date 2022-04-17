@@ -1,0 +1,69 @@
+unit Controller.Formularios;
+
+interface
+
+ uses
+   Interfaces.Controller.Formularios,
+   Interfaces.Formularios,
+   Model.Formularios;
+
+  type
+    TAbrirFormularios = class(TInterfacedObject, iAbrirFormularios)
+      private
+        FFormProdutos : iFormularios;
+        FFormClientes : iFormularios;
+        FFormBancos   : iFormularios;
+      public
+        constructor create;
+        destructor destroy; override;
+      class function New : iAbrirFormularios;
+        function CadastroProdutos : iFormularios;
+        function CadastrClientes : iFormularios;
+        function CadastroBancos : iFormularios;
+    end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TAbrirFormularios }
+
+function TAbrirFormularios.CadastroBancos: iFormularios;
+begin
+  if not Assigned(FFormBancos) then
+    FFormBancos := TFormulario.New;
+  Result := FFormBancos;
+end;
+
+function TAbrirFormularios.CadastroProdutos: iFormularios;
+begin
+  if Not Assigned(FFormProdutos) then
+    FFormProdutos := TFormulario.New;
+  Result := FFormProdutos;
+end;
+
+function TAbrirFormularios.CadastrClientes: iFormularios;
+begin
+  if Not Assigned(FFormClientes) then
+    FFormClientes := TFormulario.New;
+  Result := FFormClientes;
+end;
+
+constructor TAbrirFormularios.create;
+begin
+
+end;
+
+destructor TAbrirFormularios.destroy;
+begin
+
+  inherited;
+end;
+
+class function TAbrirFormularios.New: iAbrirFormularios;
+begin
+  Result := Self.create;
+end;
+
+end.
