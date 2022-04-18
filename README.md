@@ -1,14 +1,34 @@
-# Delphi-Poo-Interfaces
-Projeto Sistema de Vendas Delphi.
+### Delphi-native 
 
-#### Tecnologia utilizada:
-POO - MVCi
-* Model
-* View
-* Controller
-* Interface
+# ![Profile views](https://gpvc.arturio.dev/Kyuorhan)
 
-Banco de Dados
+* Projeto em desenvolvimento, onde consiste em um CRUD com formulários inherited e as classes de consultas, insert, update e delete totalmente dinâmicas e genéricas gerando um baixo acoplamento e uma fácil manutenção.
+
+
+#### Sample - CRUD
+
+```javascript
+> Interface de "Coneão";
+> Interface de "CRUD";
+```
+
+#### Sample - Component
+
+```javascript
+> Interface de "TDataSet";
+```
+
+<!-- * Interface do TSplitView; -->
+<!-- * Interface do DBGrid; -->
+
+#### Outhers
+
+```javascript
+> Interface de "Formuálrios"
+```
+
+### Resources
+
 * SQlite
 
-Projeto em desenvolvimento, onde consiste em um CRUD com formulários inherited e as classes de consultas, insert, update e delete totalmente dinâmicas e genéricas gerando um baixo acoplamento e uma fácil manutenção.
+
