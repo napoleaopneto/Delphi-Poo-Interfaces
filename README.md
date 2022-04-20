@@ -28,6 +28,6 @@
 
 ### Resources
 
-* SQlite
+* SQLite
 
 
