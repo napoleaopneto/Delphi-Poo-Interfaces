@@ -16,6 +16,7 @@ interface
         FFormFuncionarios   : iFormularios;
         FFormUsuarios   : iFormularios;
         FFormUnidades  : iFormularios;
+        FForm          : iFormularios;
       public
         constructor create;
         destructor destroy; override;
@@ -26,6 +27,7 @@ interface
         function CadastroFuncionarios : iFormularios;
         function CadastroUsuarios : iFormularios;
         function CadastroUnidades : iFormularios;
+        function _TipoForm  : iFormularios;
     end;
 
 implementation
@@ -91,6 +93,12 @@ end;
 class function TAbrirFormularios.New: iAbrirFormularios;
 begin
   Result := Self.create;
+end;
+
+function TAbrirFormularios._TipoForm: iFormularios;
+begin
+  FForm := TFormulario.New;
+  Result := FForm;
 end;
 
 end.

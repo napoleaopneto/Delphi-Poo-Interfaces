@@ -42,6 +42,7 @@ type
     FCancelar : iSQLCancelar;
   public
     { Public declarations }
+    FTipoForm : String;
   end;
 
 var
@@ -98,7 +99,8 @@ begin
     := TControllerCrud
       .New
         ._InsertSQL
-          ._Insert('pessoas',DataSource);
+           .TipoFormulario(Self.Caption)
+            ._Insert('pessoas',DataSource);
   inherited;
   edtDescricao.SetFocus;
 end;

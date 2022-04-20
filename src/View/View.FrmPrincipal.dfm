@@ -5,13 +5,13 @@ object FrmPrincipal: TFrmPrincipal
   ClientHeight = 639
   ClientWidth = 1270
   Color = clBtnFace
+  CustomTitleBar.CaptionAlignment = taCenter
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   Menu = MainMenu
-  OldCreateOrder = False
   Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -24,6 +24,7 @@ object FrmPrincipal: TFrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitTop = -6
   end
   object StatusBar: TStatusBar
     Left = 0

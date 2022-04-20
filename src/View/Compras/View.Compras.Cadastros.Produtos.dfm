@@ -5,6 +5,13 @@ inherited FrmCadProdutos: TFrmCadProdutos
   TextHeight = 13
   inherited pnFundo: TPanel
     inherited PageControl: TPageControl
+      inherited TabConsulta: TTabSheet
+        inherited pnTopTabConsulta: TPanel
+          inherited lbConsultar: TLabel
+            Width = 569
+          end
+        end
+      end
       inherited TabCadastro: TTabSheet
         inherited pnCentralTabCadastro: TPanel
           object Label1: TLabel [1]
