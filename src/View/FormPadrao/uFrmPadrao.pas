@@ -179,7 +179,8 @@ begin
     BtnExcluir.Enabled := false;
     BtnCancelar.Enabled := false;
   end;
-
+  if PageControl.ActivePageIndex <> 1 then
+    edtConsulta.Text := '';
   BtnSair.Enabled := true;
 end;
 

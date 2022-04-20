@@ -43,6 +43,18 @@ object FrmPrincipal: TFrmPrincipal
           Caption = 'Produtos'
           OnClick = mComprasCadastros_ProdutosClick
         end
+        object mComprasCadastros_Unidades: TMenuItem
+          Caption = 'Unidades'
+          OnClick = mComprasCadastros_UnidadesClick
+        end
+        object mComprasCadastros_Fornecedores: TMenuItem
+          Caption = 'Fornecedores'
+          OnClick = mComprasCadastros_FornecedoresClick
+        end
+        object mComprasCadastros_Fabricantes: TMenuItem
+          Caption = 'Fabricantes'
+          OnClick = mComprasCadastros_FabricantesClick
+        end
       end
     end
     object mVendas: TMenuItem

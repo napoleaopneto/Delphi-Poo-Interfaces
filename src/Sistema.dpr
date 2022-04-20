@@ -10,13 +10,12 @@ uses
   Model.Formularios in 'Model\Model.Formularios.Pas',
   View.Utilitarios.Cadastros.Usuarios in 'View\Utilitarios\View.Utilitarios.Cadastros.Usuarios.pas' {FrmCadUsuarios},
   View.Compras.Cadastros.Produtos in 'View\Compras\View.Compras.Cadastros.Produtos.pas' {FrmCadProdutos},
-  View.Vendas.Cadastros.Clientes in 'View\Vendas\View.Vendas.Cadastros.Clientes.pas' {FrmCadClientes},
+  View.Vendas.Cadastros.Pessoas in 'View\FormPadrao\View.Vendas.Cadastros.Pessoas.pas' {FrmCadPessoas},
   View.Financeiro.Cadastros.Bancos in 'View\Financeiro\View.Financeiro.Cadastros.Bancos.pas' {FrmCadBancos},
   View.RH.Cadastros.Funcionarios in 'View\RH\View.RH.Cadastros.Funcionarios.pas' {FrmCadFuncionarios},
   Interfaces.Conexao in 'Interfaces\Interfaces.Conexao.pas',
   Model.Conexao in 'Model\Model.Conexao.pas',
   Interfaces.Controller.Conexao in 'Interfaces\Interfaces.Controller.Conexao.pas',
-  Controller.Conexao in 'Controller\Controller.Conexao.pas',
   Interfaces.ComponenteQuery in 'Interfaces\Interfaces.ComponenteQuery.pas',
   Model.ComponenteQuery in 'Model\Model.ComponenteQuery.pas',
   Controller.ComponenteQuery in 'Controller\Controller.ComponenteQuery.pas',
@@ -24,7 +23,9 @@ uses
   Interfaces.Crud in 'Interfaces\Interfaces.Crud.pas',
   Model.Crud in 'Model\Model.Crud.pas',
   Interfaces.Controller.Crud in 'Interfaces\Interfaces.Controller.Crud.pas',
-  Controller.Crud in 'Controller\Controller.Crud.pas';
+  Controller.Crud in 'Controller\Controller.Crud.pas',
+  View.Compras.Cadastros.Unidades in 'View\Compras\View.Compras.Cadastros.Unidades.pas' {FrmCadUnidade},
+  Controller.Conexao in 'Controller\Controller.Conexao.pas';
 
 {$R *.res}
 

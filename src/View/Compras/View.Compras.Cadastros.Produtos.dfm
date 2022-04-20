@@ -4,21 +4,9 @@ inherited FrmCadProdutos: TFrmCadProdutos
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnFundo: TPanel
-    inherited pnMenu: TPanel
-      inherited BtnExcluir: TButton
-        OnClick = BtnExcluirClick
-      end
-      inherited BtnGravar: TButton
-        OnClick = BtnGravarClick
-      end
-    end
     inherited PageControl: TPageControl
       inherited TabCadastro: TTabSheet
         inherited pnCentralTabCadastro: TPanel
-          ExplicitLeft = 2
-          ExplicitTop = -8
-          ExplicitWidth = 579
-          ExplicitHeight = 409
           object Label1: TLabel [1]
             AlignWithMargins = True
             Left = 3

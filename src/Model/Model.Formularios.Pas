@@ -7,32 +7,36 @@ uses
  Interfaces.Formularios,
  View.Utilitarios.Cadastros.Usuarios,
  View.Compras.Cadastros.Produtos,
- View.Vendas.Cadastros.Clientes,
+ View.Vendas.Cadastros.Pessoas,
  View.Financeiro.Cadastros.Bancos,
- View.RH.Cadastros.Funcionarios;
+ View.RH.Cadastros.Funcionarios,
+ View.Compras.Cadastros.Unidades;
 
   type
     TFormulario = class(TInterfacedObject, iFormularios)
       private
+        FCaption : String;
       public
       constructor create;
       destructor destroy; override;
       class function New : iFormularios;
         function CadastroProdutos(Owner : TForm) : TFrmCadProdutos;
-        function CadastroClientes(Owner : TForm) : TFrmCadClientes;
+        function CadastroPessoas(Owner : TForm; aCaption : String) : TFrmCadPessoas;
         function CadastroBanco(Owner : TForm) : TFrmCadBancos;
         function CadastroFuncionarios(Owner : TForm) : TFrmCadFuncionarios;
         function CadastroUsuarios(Owner : TForm) : TFrmCadUsuarios;
+        function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
     end;
 
 implementation
 
 { tFormulario }
 
-function TFormulario.CadastroClientes(Owner: TForm): TFrmCadClientes;
+function TFormulario.CadastroPessoas(Owner: TForm; aCaption : String): TFrmCadPessoas;
 begin
-  FrmCadClientes := TFrmCadClientes.Create(Owner);
-  Result := FrmCadClientes;
+  FrmCadPessoas := TFrmCadPessoas.Create(Owner);
+  FrmCadPessoas.Caption := aCaption;
+  Result := FrmCadPessoas;
 end;
 
 function TFormulario.CadastroFuncionarios(Owner: TForm): TFrmCadFuncionarios;
@@ -45,6 +49,12 @@ function tFormulario.CadastroProdutos(Owner: TForm): TFrmCadProdutos;
 begin
   FrmCadProdutos := TFrmCadProdutos.Create(Owner);
   Result := FrmCadProdutos;
+end;
+
+function TFormulario.CadastroUnidades(Owner: TForm): TFrmCadUnidade;
+begin
+  FrmCadUnidade := TFrmCadUnidade.Create(Owner);
+  Result := FrmCadUnidade;
 end;
 
 function TFormulario.CadastroUsuarios(Owner: TForm): TFrmCadUsuarios;
