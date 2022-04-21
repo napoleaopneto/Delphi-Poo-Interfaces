@@ -24,6 +24,8 @@ object FrmPrincipal: TFrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitLeft = 48
+    ExplicitTop = 56
   end
   object StatusBar: TStatusBar
     Left = 0

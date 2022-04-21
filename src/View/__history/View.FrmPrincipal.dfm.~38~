@@ -13,6 +13,7 @@ object FrmPrincipal: TFrmPrincipal
   Menu = MainMenu
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object pnPrincipal: TPanel
@@ -23,7 +24,6 @@ object FrmPrincipal: TFrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = -6
   end
   object StatusBar: TStatusBar
     Left = 0
@@ -42,6 +42,18 @@ object FrmPrincipal: TFrmPrincipal
         object mComprasCadastros_Produtos: TMenuItem
           Caption = 'Produtos'
           OnClick = mComprasCadastros_ProdutosClick
+        end
+        object mComprasCadastros_Unidades: TMenuItem
+          Caption = 'Unidades'
+          OnClick = mComprasCadastros_UnidadesClick
+        end
+        object mComprasCadastros_Fornecedores: TMenuItem
+          Caption = 'Fornecedores'
+          OnClick = mComprasCadastros_FornecedoresClick
+        end
+        object mComprasCadastros_Fabricantes: TMenuItem
+          Caption = 'Fabricantes'
+          OnClick = mComprasCadastros_FabricantesClick
         end
       end
     end
