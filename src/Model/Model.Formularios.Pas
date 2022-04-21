@@ -26,6 +26,8 @@ uses
         function CadastroFuncionarios(Owner : TForm) : TFrmCadFuncionarios;
         function CadastroUsuarios(Owner : TForm) : TFrmCadUsuarios;
         function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
+
+        function TipoFormulario(aValue : String) : iFormularios;
     end;
 
 implementation
@@ -83,6 +85,11 @@ end;
 class function tFormulario.New: iFormularios;
 begin
   Result := Self.create;
+end;
+
+function TFormulario.TipoFormulario(aValue: String): iFormularios;
+begin
+//
 end;
 
 end.

@@ -14,7 +14,8 @@ uses
 
    iSQLInsert = interface
      ['{6C05D1FE-EE28-4029-8083-D56DF4B867E9}']
-     function _Insert(aTabela : String; aDataSource : TDataSource) : iSQLInsert;
+     function _Insert(aTabela : String; aDataSource : TDataSource) : iSQLInsert; overload;
+     function TipoFormulario(aTipoForm : String) : iSQLInsert;
    end;
 
    iSQLUpdate = interface

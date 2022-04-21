@@ -3,39 +3,46 @@ inherited FrmCadUnidade: TFrmCadUnidade
   ClientHeight = 280
   ClientWidth = 460
   OnShow = FormShow
-  ExplicitWidth = 466
-  ExplicitHeight = 309
+  ExplicitWidth = 476
+  ExplicitHeight = 319
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnFundo: TPanel
     Width = 460
     Height = 280
+    ExplicitWidth = 460
+    ExplicitHeight = 280
     inherited pnMenu: TPanel
       Height = 280
+      ExplicitHeight = 280
       inherited BtnSair: TButton
         Top = 231
+        ExplicitTop = 231
       end
     end
     inherited PageControl: TPageControl
       Width = 347
       Height = 280
       ActivePage = TabCadastro
+      ExplicitWidth = 347
+      ExplicitHeight = 280
       inherited TabConsulta: TTabSheet
         ExplicitWidth = 339
         ExplicitHeight = 252
         inherited pnTopTabConsulta: TPanel
           Width = 339
-          inherited lbConsultar: TLabel
-            Width = 329
-          end
+          ExplicitWidth = 339
           inherited edtConsulta: TEdit
             Width = 232
             Margins.Right = 100
+            ExplicitWidth = 232
           end
         end
         inherited pnCentralpnTopTabConsulta: TPanel
           Width = 339
           Height = 202
+          ExplicitWidth = 339
+          ExplicitHeight = 202
           inherited dbGrid: TDBGrid
             Width = 329
             Height = 194
@@ -71,9 +78,6 @@ inherited FrmCadUnidade: TFrmCadUnidade
           Height = 252
           ExplicitWidth = 489
           ExplicitHeight = 314
-          inherited lbCodigo: TLabel
-            Width = 329
-          end
           object Label1: TLabel [1]
             AlignWithMargins = True
             Left = 3

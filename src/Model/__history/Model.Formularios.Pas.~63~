@@ -1,0 +1,96 @@
+unit Model.Formularios;
+
+interface
+
+uses
+ Vcl.Forms,
+ Interfaces.Formularios,
+ View.Utilitarios.Cadastros.Usuarios,
+ View.Compras.Cadastros.Produtos,
+ View.Vendas.Cadastros.Pessoas,
+ View.Financeiro.Cadastros.Bancos,
+ View.RH.Cadastros.Funcionarios,
+ View.Compras.Cadastros.Unidades;
+
+  type
+    TFormulario = class(TInterfacedObject, iFormularios)
+      private
+        FCaption : String;
+      public
+      constructor create;
+      destructor destroy; override;
+      class function New : iFormularios;
+        function CadastroProdutos(Owner : TForm) : TFrmCadProdutos;
+        function CadastroPessoas(Owner : TForm; aCaption : String) : TFrmCadPessoas;
+        function CadastroBanco(Owner : TForm) : TFrmCadBancos;
+        function CadastroFuncionarios(Owner : TForm) : TFrmCadFuncionarios;
+        function CadastroUsuarios(Owner : TForm) : TFrmCadUsuarios;
+        function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
+
+        function TipoFormulario(aValue : String) : iFormularios;
+    end;
+
+implementation
+
+{ tFormulario }
+
+function TFormulario.CadastroPessoas(Owner: TForm; aCaption : String): TFrmCadPessoas;
+begin
+  FrmCadPessoas := TFrmCadPessoas.Create(Owner);
+  FrmCadPessoas.Caption := aCaption;
+  Result := FrmCadPessoas;
+end;
+
+function TFormulario.CadastroFuncionarios(Owner: TForm): TFrmCadFuncionarios;
+begin
+  FrmCadFuncionarios := TFrmCadFuncionarios.Create(Owner);
+  Result := FrmCadFuncionarios;
+end;
+
+function tFormulario.CadastroProdutos(Owner: TForm): TFrmCadProdutos;
+begin
+  FrmCadProdutos := TFrmCadProdutos.Create(Owner);
+  Result := FrmCadProdutos;
+end;
+
+function TFormulario.CadastroUnidades(Owner: TForm): TFrmCadUnidade;
+begin
+  FrmCadUnidade := TFrmCadUnidade.Create(Owner);
+  Result := FrmCadUnidade;
+end;
+
+function TFormulario.CadastroUsuarios(Owner: TForm): TFrmCadUsuarios;
+begin
+  FrmCadUsuarios := TFrmCadUsuarios.Create(Owner);
+  Result := FrmCadUsuarios;
+end;
+
+function TFormulario.CadastroBanco(Owner: TForm): TFrmCadBancos;
+begin
+  FrmCadBancos := TFrmCadBancos.Create(Owner);
+  Result := FrmCadBancos;
+end;
+
+constructor tFormulario.create;
+begin
+
+end;
+
+destructor tFormulario.destroy;
+begin
+
+  inherited;
+end;
+
+class function tFormulario.New: iFormularios;
+begin
+  Result := Self.create;
+end;
+
+function TFormulario.TipoFormulario(aValue: String): iFormularios;
+begin
+  FCaption := aValue;
+  //Result := aValue;
+end;
+
+end.

@@ -23,11 +23,11 @@
 #### Outhers
 
 ```javascript
-> Interface de "Formuálrios"
+> Interface de "Formulários"
 ```
 
 ### Resources
 
-* SQlite
+* SQLite
 
 

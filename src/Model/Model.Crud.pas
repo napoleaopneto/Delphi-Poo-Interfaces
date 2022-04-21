@@ -17,21 +17,29 @@ interface
    TSQLQuery = class(TInterfacedObject,iSQLOpen,iSQLInsert,iSQLUpdate,iSQLDelete,iSQLCancelar)
      private
        FQuery : iQuery;
+       FForm : string;
      public
      Constructor Create;
      destructor destroy; override;
        class function NewOpen : iSQLOpen;
        class function NewInert : iSQLInsert;
+       class function NewForm : iSQLInsert;
        class function NewUpdate : iSQLUpdate; overload;
        class function NewDelete : iSQLDelete; overload;
        class function NewCancelar : iSQLCancelar; overload;
 
        function _Open(aTabela : string; aDataSource : TDataSource) : iSQLOpen; overload;
        function _Open(aTabela : string; aParam : String; aDataSource : TDataSource) : iSQLOpen; overload;
-       function _Insert(aTabela : String; aDataSource : TDataSource) : iSQLInsert;
+
+       function _Insert(aTabela : String; aDataSource : TDataSource) : iSQLInsert; overload;
+       function TipoFormulario(aTipoForm : String) : iSQLInsert;
+
        function _Update : iSQLUpdate;
+
        function _Delete(aTabela : string; aParam : String) : iSQLDelete;
+
        function _Cancelar(aDataSource : TDataSource) : iSQLCancelar;
+
    end;
 
 implementation
@@ -83,6 +91,9 @@ begin
   FQuery.Dataset.Fields[0].Required := true;
 
   FQuery.DataSet.Insert;
+
+  if (FForm <> '') then
+    FQuery.Dataset.FieldByName('tipopessoa').AsString := FForm;
 end;
 
 function TSQLQuery._Update: iSQLUpdate;
@@ -132,7 +143,24 @@ begin
   Result := Self.Create;
 end;
 
+function TSQLQuery.TipoFormulario(aTipoForm: String): iSQLInsert;
+begin
+  Result := Self;
+
+  if (aTipoForm = 'Cadastro de Clientes') then
+    FForm  := 'Clientes';
+  if (aTipoForm = 'Cadastro de Fabricantes') then
+    FForm  := 'Fabricantes';
+  if (aTipoForm = 'Cadastro de Fornecedores') then
+    FForm  := 'Fornecedores';
+end;
+
 class function TSQLQuery.NewDelete: iSQLDelete;
+begin
+  Result := Self.Create;
+end;
+
+class function TSQLQuery.NewForm: iSQLInsert;
 begin
   Result := Self.Create;
 end;
