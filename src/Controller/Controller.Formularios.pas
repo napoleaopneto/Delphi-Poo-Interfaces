@@ -24,7 +24,6 @@ interface
         function CadastroProdutos : iFormularios;
         function CadastroPessoas : iFormularios;
         function CadastroBancos : iFormularios;
-        function CadastroFuncionarios : iFormularios;
         function CadastroUsuarios : iFormularios;
         function CadastroUnidades : iFormularios;
         function _TipoForm  : iFormularios;
@@ -42,13 +41,6 @@ begin
   if not Assigned(FFormBancos) then
     FFormBancos := TFormulario.New;
   Result := FFormBancos;
-end;
-
-function TAbrirFormularios.CadastroFuncionarios: iFormularios;
-begin
-  if Not Assigned(FFormFuncionarios) then
-    FFormFuncionarios := TFormulario.New;
-  Result := FFormFuncionarios;
 end;
 
 function TAbrirFormularios.CadastroProdutos: iFormularios;

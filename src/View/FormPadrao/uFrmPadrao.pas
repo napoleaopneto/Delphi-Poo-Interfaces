@@ -21,7 +21,8 @@ uses
   Vcl.Mask,
   Vcl.DBCtrls,
   math,
-  system.strutils;
+  system.strutils,
+  Funcoes;
 
 type
   TFrmPadrao = class(TForm)
@@ -53,6 +54,8 @@ type
     procedure dbGridDblClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure edtConsultaChange(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
     procedure TratarBotoes(aValue : string);
@@ -91,7 +94,6 @@ begin
   dbGrid.DataSource.DataSet.Refresh;
   PageControl.ActivePageIndex := 0;
   TratarBotoes('Novo');
-  Busca();
 end;
 
 procedure TFrmPadrao.btnNovoClick(Sender: TObject);
@@ -139,6 +141,21 @@ end;
 procedure TFrmPadrao.FormCreate(Sender: TObject);
 begin
   TratarBotoes('Novo');
+end;
+
+procedure TFrmPadrao.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = vk_escape then
+  begin
+    if PageControl.ActivePageIndex <> 1 then
+      BtnSair.Click;
+  end;
+end;
+
+procedure TFrmPadrao.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  TabEnter(key);
 end;
 
 procedure TFrmPadrao.TratarBotoes(aValue: string);

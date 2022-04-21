@@ -12,7 +12,6 @@ uses
   View.Compras.Cadastros.Produtos in 'View\Compras\View.Compras.Cadastros.Produtos.pas' {FrmCadProdutos},
   View.Vendas.Cadastros.Pessoas in 'View\FormPadrao\View.Vendas.Cadastros.Pessoas.pas' {FrmCadPessoas},
   View.Financeiro.Cadastros.Bancos in 'View\Financeiro\View.Financeiro.Cadastros.Bancos.pas' {FrmCadBancos},
-  View.RH.Cadastros.Funcionarios in 'View\RH\View.RH.Cadastros.Funcionarios.pas' {FrmCadFuncionarios},
   Interfaces.Conexao in 'Interfaces\Interfaces.Conexao.pas',
   Model.Conexao in 'Model\Model.Conexao.pas',
   Interfaces.Controller.Conexao in 'Interfaces\Interfaces.Controller.Conexao.pas',
@@ -25,7 +24,8 @@ uses
   Interfaces.Controller.Crud in 'Interfaces\Interfaces.Controller.Crud.pas',
   Controller.Crud in 'Controller\Controller.Crud.pas',
   View.Compras.Cadastros.Unidades in 'View\Compras\View.Compras.Cadastros.Unidades.pas' {FrmCadUnidade},
-  Controller.Conexao in 'Controller\Controller.Conexao.pas';
+  Controller.Conexao in 'Controller\Controller.Conexao.pas',
+  Funcoes in 'Bibliotecas\Funcoes.pas';
 
 {$R *.res}
 

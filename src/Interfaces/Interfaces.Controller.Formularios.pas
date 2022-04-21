@@ -11,7 +11,6 @@ uses
        function CadastroProdutos : iFormularios;
        function CadastroPessoas : iFormularios;
        function CadastroBancos : iFormularios;
-       function CadastroFuncionarios : iFormularios;
        function CadastroUsuarios : iFormularios;
        function CadastroUnidades : iFormularios;
      end;

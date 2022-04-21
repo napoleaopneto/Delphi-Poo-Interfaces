@@ -12,10 +12,13 @@ object FrmPadrao: TFrmPadrao
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   Position = poMainFormCenter
   OnActivate = FormActivate
   OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
   object pnFundo: TPanel
@@ -100,7 +103,6 @@ object FrmPadrao: TFrmPadrao
       ActivePage = TabConsulta
       Align = alClient
       TabOrder = 1
-      ExplicitLeft = 114
       object TabConsulta: TTabSheet
         Caption = 'Consulta'
         object pnTopTabConsulta: TPanel

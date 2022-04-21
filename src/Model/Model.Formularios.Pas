@@ -4,12 +4,12 @@ interface
 
 uses
  Vcl.Forms,
+ Winapi.Messages,
  Interfaces.Formularios,
  View.Utilitarios.Cadastros.Usuarios,
  View.Compras.Cadastros.Produtos,
  View.Vendas.Cadastros.Pessoas,
  View.Financeiro.Cadastros.Bancos,
- View.RH.Cadastros.Funcionarios,
  View.Compras.Cadastros.Unidades;
 
   type
@@ -23,7 +23,6 @@ uses
         function CadastroProdutos(Owner : TForm) : TFrmCadProdutos;
         function CadastroPessoas(Owner : TForm; aCaption : String) : TFrmCadPessoas;
         function CadastroBanco(Owner : TForm) : TFrmCadBancos;
-        function CadastroFuncionarios(Owner : TForm) : TFrmCadFuncionarios;
         function CadastroUsuarios(Owner : TForm) : TFrmCadUsuarios;
         function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
 
@@ -39,12 +38,6 @@ begin
   FrmCadPessoas := TFrmCadPessoas.Create(Owner);
   FrmCadPessoas.Caption := aCaption;
   Result := FrmCadPessoas;
-end;
-
-function TFormulario.CadastroFuncionarios(Owner: TForm): TFrmCadFuncionarios;
-begin
-  FrmCadFuncionarios := TFrmCadFuncionarios.Create(Owner);
-  Result := FrmCadFuncionarios;
 end;
 
 function tFormulario.CadastroProdutos(Owner: TForm): TFrmCadProdutos;
