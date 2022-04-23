@@ -28,6 +28,8 @@ type
   TFrmCadProdutos = class(TFrmPadrao)
     edtDescricao: TDBEdit;
     Label1: TLabel;
+    Label2: TLabel;
+    edtDescTecnica: TDBEdit;
     procedure FormShow(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
@@ -119,7 +121,6 @@ begin
       .New
         ._OpenSQL
           ._Open('produtos',DataSource);
-
   inherited;
 end;
 

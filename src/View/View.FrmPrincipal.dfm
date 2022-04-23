@@ -15,7 +15,9 @@ object FrmPrincipal: TFrmPrincipal
   Menu = MainMenu
   OldCreateOrder = True
   Position = poMainFormCenter
+  OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnPrincipal: TPanel
@@ -32,7 +34,11 @@ object FrmPrincipal: TFrmPrincipal
     Top = 620
     Width = 1270
     Height = 19
-    Panels = <>
+    Panels = <
+      item
+        Text = 'Empresa:'
+        Width = 200
+      end>
   end
   object MainMenu: TMainMenu
     Left = 24
@@ -41,10 +47,6 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Compras'
       object mComprasCadastros: TMenuItem
         Caption = 'Cadastros'
-        object mComprasCadastros_Produtos: TMenuItem
-          Caption = 'Produtos'
-          OnClick = mComprasCadastros_ProdutosClick
-        end
         object mComprasCadastros_Unidades: TMenuItem
           Caption = 'Unidades'
           OnClick = mComprasCadastros_UnidadesClick
@@ -56,6 +58,18 @@ object FrmPrincipal: TFrmPrincipal
         object mComprasCadastros_Fabricantes: TMenuItem
           Caption = 'Fabricantes'
           OnClick = mComprasCadastros_FabricantesClick
+        end
+        object mComprasCadastros_Grupos: TMenuItem
+          Caption = 'Grupos'
+          OnClick = mComprasCadastros_GruposClick
+        end
+        object mComprasCadastros_SubGrupos: TMenuItem
+          Caption = 'Sub Grupos'
+          OnClick = mComprasCadastros_SubGruposClick
+        end
+        object mComprasCadastros_Produtos: TMenuItem
+          Caption = 'Produtos'
+          OnClick = mComprasCadastros_ProdutosClick
         end
       end
     end
@@ -103,5 +117,9 @@ object FrmPrincipal: TFrmPrincipal
         end
       end
     end
+  end
+  object DataSource: TDataSource
+    Left = 56
+    Top = 24
   end
 end

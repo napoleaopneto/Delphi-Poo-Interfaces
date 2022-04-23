@@ -32,6 +32,7 @@ interface
 
        function _Open(aTabela : string; aDataSource : TDataSource) : iSQLOpen; overload;
        function _Open(aTabela : string; aParam : String; aDataSource : TDataSource) : iSQLOpen; overload;
+       function _Open(aTabela : string; aUsuario : String; aSenha : String; aDataSource : TDataSource) : iSQLOpen; overload;
 
        function _Insert(aTabela : String; aDataSource : TDataSource) : iSQLInsert; overload;
 
@@ -49,6 +50,8 @@ implementation
 
 { TSQLQuery }
 
+uses View.FrmPrincipal, Funcoes, View.LoginSistema;
+
 constructor TSQLQuery.Create;
 begin
   FQuery := TControllerComponenteQuery.New.Query;
@@ -56,6 +59,7 @@ end;
 
 destructor TSQLQuery.destroy;
 begin
+  FreeAndNil(FrmPrincipal);
   inherited;
 end;
 
@@ -72,7 +76,7 @@ function TSQLQuery._Open(aTabela, aParam: String;aDataSource: TDataSource): iSQL
 begin
   Result := Self;
   FQuery.Dataset.SQL.Clear;
-  FQuery.Dataset.SQL.Add('select * from ' + aTabela + ' where tipopessoa = ' + QuotedStr(aParam));
+  FQuery.Dataset.SQL.Add('select * from ' + aTabela + ' where upper(tipopessoa) = ' + QuotedStr(UpperCase(aParam)));
   FQuery.Dataset.Open();
 
   aDataSource.DataSet := FQuery.Dataset;
@@ -177,4 +181,29 @@ class function TSQLQuery.NewForm: iSQLInsert;
 begin
   Result := Self.Create;
 end;
+function TSQLQuery._Open(aTabela, aUsuario, aSenha: String;aDataSource: TDataSource): iSQLOpen;
+begin
+  Result := Self;
+  FQuery.Dataset.SQL.Clear;
+  FQuery.Dataset.SQL.Add('select * from ' + aTabela + ' where upper(descricao) = ' +
+    UpperCase(QuotedStr(aUsuario)) + ' and upper(senha) = ' +UpperCase(QuotedStr(aSenha)));
+  FQuery.Dataset.Open();
+
+  if FQuery.Dataset.RecordCount = 1 then
+  begin
+    if Not Assigned(FrmPrincipal) then
+      FrmPrincipal := TFrmPrincipal.Create(nil);
+    FrmPrincipal.Show;
+
+    FrmLoginSistema.Hide;
+
+    aDataSource.DataSet := FQuery.Dataset;
+  end
+   else
+  begin
+    MostraErro('Atenção... Usuário e/ou Senha inválido');
+    abort
+  end;
+end;
+
 end.

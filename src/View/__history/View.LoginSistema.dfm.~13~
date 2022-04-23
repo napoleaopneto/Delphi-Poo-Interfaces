@@ -1,0 +1,139 @@
+object FrmLoginSistema: TFrmLoginSistema
+  Left = 0
+  Top = 0
+  BorderIcons = [biMinimize, biMaximize]
+  BorderStyle = bsSingle
+  Caption = 'Login do Sitema'
+  ClientHeight = 323
+  ClientWidth = 427
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnCentral: TPanel
+    Left = 0
+    Top = 0
+    Width = 427
+    Height = 323
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 0
+    ExplicitLeft = 128
+    ExplicitTop = 200
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object imgLogo: TImage
+      AlignWithMargins = True
+      Left = 3
+      Top = 20
+      Width = 421
+      Height = 158
+      Margins.Top = 20
+      Margins.Bottom = 145
+      Align = alClient
+      Stretch = True
+      ExplicitLeft = 6
+    end
+    object pnMeio: TPanel
+      AlignWithMargins = True
+      Left = 30
+      Top = 180
+      Width = 367
+      Height = 93
+      Margins.Left = 30
+      Margins.Top = 180
+      Margins.Right = 30
+      Margins.Bottom = 50
+      Align = alClient
+      BevelKind = bkTile
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitLeft = 3
+      ExplicitTop = 3
+      ExplicitWidth = 421
+      ExplicitHeight = 397
+      object lbUsuario: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 357
+        Height = 13
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Usu'#225'rio'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitWidth = 43
+      end
+      object lbSenha: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 46
+        Width = 357
+        Height = 13
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Senha'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitWidth = 35
+      end
+      object edtUsuario: TEdit
+        AlignWithMargins = True
+        Left = 3
+        Top = 19
+        Width = 357
+        Height = 21
+        Align = alTop
+        TabOrder = 0
+        TextHint = 'Entre com Usu'#225'rio'
+        ExplicitLeft = 120
+        ExplicitTop = 40
+        ExplicitWidth = 121
+      end
+      object edtSenha: TEdit
+        AlignWithMargins = True
+        Left = 3
+        Top = 62
+        Width = 357
+        Height = 21
+        Align = alTop
+        TabOrder = 1
+        TextHint = 'Entre com Senha'
+        ExplicitLeft = -2
+        ExplicitTop = 75
+      end
+    end
+    object btnEntrar: TButton
+      Left = 30
+      Top = 272
+      Width = 181
+      Height = 51
+      Caption = 'Entrar'
+      TabOrder = 1
+    end
+    object btnSair: TButton
+      Left = 216
+      Top = 272
+      Width = 181
+      Height = 50
+      Caption = 'Sair'
+      TabOrder = 2
+      OnClick = btnSairClick
+    end
+  end
+end

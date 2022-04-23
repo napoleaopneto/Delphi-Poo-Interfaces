@@ -109,26 +109,34 @@ end;
 
 procedure TFrmCadPessoas.BtnGravarClick(Sender: TObject);
 begin
-  if (BtnGravar.Caption = 'Editar') then
+  if (ValidarCampos(self) = True) then
   begin
-    FUpdate
-      := TControllerCrud
-       .New
-        ._UpdateSQL
-         .TipoFormulario(Self.Caption)
-          ._Update('pessoas',DataSource);
+    aviso('Preencher Campo: '+GvarCaption);
+    exit;
   end
-    else if (BtnGravar.Caption = 'Gravar') then
+   else
   begin
-    FUpdate
-      := TControllerCrud
-       .New
-        ._UpdateSQL
-         .TipoFormulario(Self.Caption)
-          ._Update('pessoas',DataSource);
+    if (BtnGravar.Caption = 'Editar') then
+    begin
+      FUpdate
+        := TControllerCrud
+         .New
+          ._UpdateSQL
+           .TipoFormulario(Self.Caption)
+            ._Update('pessoas',DataSource);
+    end
+      else if (BtnGravar.Caption = 'Gravar') then
+    begin
+      FUpdate
+        := TControllerCrud
+         .New
+          ._UpdateSQL
+           .TipoFormulario(Self.Caption)
+            ._Update('pessoas',DataSource);
+    end;
+    inherited;
+    RetornarRegistros();
   end;
-  inherited;
-  RetornarRegistros();
 end;
 
 procedure TFrmCadPessoas.btnNovoClick(Sender: TObject);

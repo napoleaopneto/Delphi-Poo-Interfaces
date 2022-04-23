@@ -18,7 +18,13 @@ uses
   Vcl.StdCtrls,
   Controller.Formularios,
   Controller.ComponenteQuery,
-  Controller.Conexao;
+  Controller.Conexao,
+  Data.DB,
+  Controller.Crud,
+  Interfaces.Crud,
+  Funcoes,
+  math,
+  strutils;
 
 type
   TFrmPrincipal = class(TForm)
@@ -44,6 +50,9 @@ type
     mComprasCadastros_Fornecedores: TMenuItem;
     mComprasCadastros_Fabricantes: TMenuItem;
     mUtilitariosCadastros_Empresa: TMenuItem;
+    mComprasCadastros_Grupos: TMenuItem;
+    mComprasCadastros_SubGrupos: TMenuItem;
+    DataSource: TDataSource;
     procedure mComprasCadastros_ProdutosClick(Sender: TObject);
     procedure mVendasCadastros_ClientesClick(Sender: TObject);
     procedure mFinanceiroCadastros_BancosClick(Sender: TObject);
@@ -54,10 +63,15 @@ type
     procedure mComprasCadastros_FornecedoresClick(Sender: TObject);
     procedure mComprasCadastros_FabricantesClick(Sender: TObject);
     procedure mUtilitariosCadastros_EmpresaClick(Sender: TObject);
+    procedure mComprasCadastros_GruposClick(Sender: TObject);
+    procedure mComprasCadastros_SubGruposClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    FOpen : iSQLOpen;
     procedure TabEnter(Key :Char);
   end;
 
@@ -68,11 +82,30 @@ implementation
 
 {$R *.dfm}
 
+uses View.LoginSistema;
+
+procedure TFrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FreeAndNil(FrmLoginSistema);
+end;
+
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
   TControllerConexao
    .New
     .Conexao;
+end;
+
+procedure TFrmPrincipal.FormShow(Sender: TObject);
+begin
+  FOpen
+   := TControllerCrud
+    .New
+     ._OpenSQL
+      ._Open('pessoas','empresa',DataSource);
+
+  StatusBar.Panels.Items[0].Text := 'Empresa: ' +
+    ifthen(DataSource.DataSet.FieldByName('razaosocial').AsString = '','',DataSource.DataSet.FieldByName('razaosocial').AsString);
 end;
 
 procedure TFrmPrincipal.mVendasCadastros_ClientesClick(Sender: TObject);
@@ -111,12 +144,30 @@ begin
        .ShowModal;
 end;
 
+procedure TFrmPrincipal.mComprasCadastros_GruposClick(Sender: TObject);
+begin
+  TAbrirFormularios
+   .New
+    .CadastroGrupos
+     .CadastroGrupos(Self)
+      .ShowModal;
+end;
+
 procedure TFrmPrincipal.mComprasCadastros_ProdutosClick(Sender: TObject);
 begin
   TAbrirFormularios
    .New
     .CadastroProdutos
      .CadastroProdutos(Self)
+      .ShowModal;
+end;
+
+procedure TFrmPrincipal.mComprasCadastros_SubGruposClick(Sender: TObject);
+begin
+  TAbrirFormularios
+   .New
+    .CadastroSubGrupos
+     .CadastroSubGrupos(Self)
       .ShowModal;
 end;
 

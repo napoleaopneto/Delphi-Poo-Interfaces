@@ -1,0 +1,61 @@
+unit View.Compras.Cadastros.SubGrupos;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  uFrmPadrao,
+  Data.DB,
+  Vcl.Mask,
+  Vcl.DBCtrls,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  Vcl.StdCtrls,
+  Vcl.ComCtrls,
+  Vcl.ExtCtrls,
+  Controller.Crud,
+  Interfaces.Crud;
+
+type
+  TFrmCadSubGrupos = class(TFrmPadrao)
+    edtDescricao: TDBEdit;
+    procedure btnNovoClick(Sender: TObject);
+  private
+    { Private declarations }
+    FOpen     : iSQLOpen;
+    FInsert   : iSQLInsert;
+    FDelete   : iSQLDelete;
+    FUpdate   : iSQLUpdate;
+    FCancelar : iSQLCancelar;
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCadSubGrupos: TFrmCadSubGrupos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmCadSubGrupos.btnNovoClick(Sender: TObject);
+begin
+  FInsert
+    := TControllerCrud
+      .New
+        ._InsertSQL
+          ._Insert('produtos',DataSource);
+
+  inherited;
+  edtDescricao.SetFocus;
+end;
+
+end.
