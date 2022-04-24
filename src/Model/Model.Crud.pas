@@ -84,6 +84,8 @@ end;
 
 function TSQLQuery._Update(aTabela: String;aDataSource: TDataSource): iSQLUpdate;
 begin
+  Result := self;
+
   FQuery.Dataset.SQL.Clear;
   FQuery.Dataset.SQL.Add('select * from ' + aTabela);
   FQuery.Dataset.Open();
@@ -105,8 +107,6 @@ begin
   FQuery.Dataset.Fields[0].AutoGenerateValue := arDefault;
   FQuery.Dataset.Fields[0].ProviderFlags := [pfInWhere, pfInKey];
   FQuery.Dataset.Fields[0].ReadOnly := true;
-//  FQuery.Dataset.Fields[0].AutoIncrementSeed := 1;
-//  FQuery.Dataset.Fields[0].AutoIncrementStep := 1;
   FQuery.Dataset.Fields[0].Required := true;
 
   FQuery.DataSet.Insert;
@@ -125,9 +125,10 @@ end;
 
 function TSQLQuery._Delete(aTabela : string; aParam : String) : iSQLDelete;
 begin
+  Result := Self;
+
   if Application.MessageBox(PChar ('Deseja realmente excluir o registro ???'),'Atenção', MB_YesNo + MB_ICONQUESTION + MB_DEFBUTTON2) = idYes then
   begin
-    Result := Self;
     FQuery.Dataset.SQL.Clear;
     FQuery.Dataset.SQL.Add('select * from ' + aTabela + ' where codigo = ' + aParam);
     FQuery.Dataset.Open();

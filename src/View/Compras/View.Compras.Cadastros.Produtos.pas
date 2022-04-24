@@ -30,12 +30,22 @@ type
     Label1: TLabel;
     Label2: TLabel;
     edtDescTecnica: TDBEdit;
+    lbGrupos: TLabel;
+    edtCodigoGrupos: TDBEdit;
+    edtdescGrupos: TDBEdit;
+    lnSubGrupos: TLabel;
+    edtCodSubGrupos: TDBEdit;
+    edtDescSubGrupos: TDBEdit;
     procedure FormShow(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure BtnGravarClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure dbGridDblClick(Sender: TObject);
+    procedure edtCodigoGruposKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure edtCodSubGruposKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     FOpen     : iSQLOpen;
@@ -53,6 +63,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Controller.Formularios;
 
 procedure TFrmCadProdutos.BtnCancelarClick(Sender: TObject);
 begin
@@ -114,6 +126,34 @@ begin
   edtDescricao.SetFocus;
 end;
 
+procedure TFrmCadProdutos.edtCodigoGruposKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  if (key = VK_F2) then
+  begin
+    TAbrirFormularios
+     .New
+      .Consulta
+       .Consulta(Self,'grupos','Grupos')
+        .ShowModal;
+  end;
+end;
+
+procedure TFrmCadProdutos.edtCodSubGruposKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  if (key = VK_F2) then
+  begin
+    TAbrirFormularios
+     .New
+      .Consulta
+       .Consulta(Self,'subgrupos','Sub-Grupos')
+        .ShowModal;
+  end;
+end;
+
 procedure TFrmCadProdutos.FormShow(Sender: TObject);
 begin
   FOpen
@@ -123,5 +163,4 @@ begin
           ._Open('produtos',DataSource);
   inherited;
 end;
-
 end.

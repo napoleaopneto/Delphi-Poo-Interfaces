@@ -86,7 +86,7 @@ uses View.LoginSistema;
 
 procedure TFrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeAndNil(FrmLoginSistema);
+  Application.Terminate;
 end;
 
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
@@ -119,7 +119,7 @@ end;
 
 procedure TFrmPrincipal.TabEnter(Key: Char);
 begin
-  If Key = #13 then //Se o comando for igual a enter
+  If Key = #13 then
   Begin
     Key := #0;
     Screen.ActiveForm.Perform(WM_NextDlgCtl, 0, 0);

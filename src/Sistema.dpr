@@ -28,7 +28,8 @@ uses
   Funcoes in 'Bibliotecas\Funcoes.pas',
   View.Compras.Cadastros.Grupos in 'View\Compras\View.Compras.Cadastros.Grupos.pas' {FrmCadGrupos},
   View.Compras.Cadastros.SubGrupos in 'View\Compras\View.Compras.Cadastros.SubGrupos.pas' {FrmCadSubGrupos},
-  View.LoginSistema in 'View\View.LoginSistema.pas' {FrmLoginSistema};
+  View.LoginSistema in 'View\View.LoginSistema.pas' {FrmLoginSistema},
+  View.Consulta in 'View\FormPadrao\View.Consulta.pas' {FrmConsultaPadrao};
 
 {$R *.res}
 

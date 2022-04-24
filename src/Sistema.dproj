@@ -160,6 +160,10 @@
             <Form>FrmLoginSistema</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="View\FormPadrao\View.Consulta.pas">
+            <Form>FrmConsultaPadrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
