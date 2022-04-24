@@ -25,11 +25,7 @@ uses
   Controller.Crud in 'Controller\Controller.Crud.pas',
   View.Compras.Cadastros.Unidades in 'View\Compras\View.Compras.Cadastros.Unidades.pas' {FrmCadUnidade},
   Controller.Conexao in 'Controller\Controller.Conexao.pas',
-  Funcoes in 'Bibliotecas\Funcoes.pas',
-  View.Compras.Cadastros.Grupos in 'View\Compras\View.Compras.Cadastros.Grupos.pas' {FrmCadGrupos},
-  View.Compras.Cadastros.SubGrupos in 'View\Compras\View.Compras.Cadastros.SubGrupos.pas' {FrmCadSubGrupos},
-  View.LoginSistema in 'View\View.LoginSistema.pas' {FrmLoginSistema},
-  View.Consulta in 'View\FormPadrao\View.Consulta.pas' {FrmConsultaPadrao};
+  Funcoes in 'Bibliotecas\Funcoes.pas';
 
 {$R *.res}
 
@@ -37,6 +33,6 @@ begin
   Application.Initialize;
   ReportMemoryLeaksOnShutdown := true;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFrmLoginSistema, FrmLoginSistema);
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.Run;
 end.

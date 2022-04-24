@@ -10,12 +10,7 @@ uses
  View.Compras.Cadastros.Produtos,
  View.Vendas.Cadastros.Pessoas,
  View.Financeiro.Cadastros.Bancos,
- View.Compras.Cadastros.Unidades,
- View.Compras.Cadastros.Grupos,
- View.Compras.Cadastros.SubGrupos,
- View.Consulta,
- math,
- strutils;
+ View.Compras.Cadastros.Unidades;
 
   type
     TFormulario = class(TInterfacedObject, iFormularios)
@@ -30,9 +25,6 @@ uses
         function CadastroBanco(Owner : TForm) : TFrmCadBancos;
         function CadastroUsuarios(Owner : TForm) : TFrmCadUsuarios;
         function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
-        function CadastroGrupos(Owner : TForm) : TFrmCadGrupos;
-        function CadastroSubGrupos(Owner : TForm) : TFrmCadSubGrupos;
-        function Consulta(Owner : TForm; aTabela : string; aCaptionForm : string = '') : TFrmConsultaPadrao;
 
         function TipoFormulario(aValue : String) : iFormularios;
     end;
@@ -40,12 +32,6 @@ uses
 implementation
 
 { tFormulario }
-
-function TFormulario.CadastroGrupos(Owner: TForm): TFrmCadGrupos;
-begin
-  FrmCadGrupos := TFrmCadGrupos.Create(Owner);
-  Result := FrmCadGrupos;
-end;
 
 function TFormulario.CadastroPessoas(Owner: TForm; aCaption : String): TFrmCadPessoas;
 begin
@@ -60,12 +46,6 @@ begin
   Result := FrmCadProdutos;
 end;
 
-function TFormulario.CadastroSubGrupos(Owner: TForm): TFrmCadSubGrupos;
-begin
-  FrmCadSubGrupos := TFrmCadSubGrupos.Create(Owner);
-  Result := FrmCadSubGrupos;
-end;
-
 function TFormulario.CadastroUnidades(Owner: TForm): TFrmCadUnidade;
 begin
   FrmCadUnidade := TFrmCadUnidade.Create(Owner);
@@ -76,14 +56,6 @@ function TFormulario.CadastroUsuarios(Owner: TForm): TFrmCadUsuarios;
 begin
   FrmCadUsuarios := TFrmCadUsuarios.Create(Owner);
   Result := FrmCadUsuarios;
-end;
-
-function TFormulario.Consulta(Owner: TForm; aTabela : string; aCaptionForm : string = ''): TFrmConsultaPadrao;
-begin
-  FrmConsultaPadrao := TFrmConsultaPadrao.Create(Owner);
-  FrmConsultaPadrao.Caption := ifthen(aCaptionForm = '','Adicione um Caption P/ Formulário de Consulta Padrão',aCaptionForm);
-  FrmConsultaPadrao.FTabela := aTabela;
-  Result := FrmConsultaPadrao;
 end;
 
 function TFormulario.CadastroBanco(Owner: TForm): TFrmCadBancos;

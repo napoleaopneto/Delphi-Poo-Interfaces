@@ -1,0 +1,483 @@
+inherited FrmCadPessoas: TFrmCadPessoas
+  Caption = 'Cadastro de Pessoas'
+  ClientHeight = 501
+  ClientWidth = 822
+  OnShow = FormShow
+  ExplicitWidth = 828
+  ExplicitHeight = 530
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnFundo: TPanel
+    Width = 822
+    Height = 501
+    ExplicitWidth = 822
+    ExplicitHeight = 501
+    inherited pnMenu: TPanel
+      Height = 501
+      ExplicitHeight = 501
+      inherited BtnSair: TButton
+        Top = 452
+        ExplicitTop = 452
+      end
+    end
+    inherited PageControl: TPageControl
+      Width = 709
+      Height = 501
+      ExplicitWidth = 709
+      ExplicitHeight = 501
+      inherited TabConsulta: TTabSheet
+        ExplicitWidth = 701
+        ExplicitHeight = 473
+        inherited pnTopTabConsulta: TPanel
+          Width = 701
+          ExplicitWidth = 701
+          inherited lbConsultar: TLabel
+            Width = 691
+          end
+          inherited edtConsulta: TEdit
+            Width = 394
+            ExplicitWidth = 394
+          end
+        end
+        inherited pnCentralpnTopTabConsulta: TPanel
+          Width = 701
+          Height = 423
+          ExplicitWidth = 701
+          ExplicitHeight = 423
+          inherited dbGrid: TDBGrid
+            Width = 691
+            Height = 415
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'codigo'
+                Title.Caption = 'C'#243'digo'
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'razaosocial'
+                Title.Caption = 'Descri'#231#227'o'
+                Width = 255
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'fantasia'
+                Title.Caption = 'Fantasia'
+                Width = 248
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'tipo'
+                Title.Caption = 'Tipo'
+                Width = 108
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'telefone'
+                Title.Caption = 'Telefone'
+                Width = 108
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'celular'
+                Title.Caption = 'Celular'
+                Width = 108
+                Visible = True
+              end>
+          end
+        end
+      end
+      inherited TabCadastro: TTabSheet
+        ExplicitWidth = 701
+        ExplicitHeight = 473
+        inherited pnCentralTabCadastro: TPanel
+          Width = 701
+          Height = 473
+          ExplicitLeft = 2
+          ExplicitTop = -8
+          ExplicitWidth = 701
+          ExplicitHeight = 473
+          inherited lbCodigo: TLabel
+            Width = 691
+          end
+          object lbRazaoNome: TLabel [1]
+            AlignWithMargins = True
+            Left = 3
+            Top = 52
+            Width = 77
+            Height = 13
+            Caption = 'lbRazaoNome'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbFantasiaApelido: TLabel [2]
+            AlignWithMargins = True
+            Left = 305
+            Top = 52
+            Width = 100
+            Height = 13
+            Caption = 'lbFantasiaApelido'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbTipo: TLabel [3]
+            AlignWithMargins = True
+            Left = 569
+            Top = 52
+            Width = 95
+            Height = 13
+            Caption = 'Tipo de Cadastro'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lnTipoPessoa: TLabel [4]
+            AlignWithMargins = True
+            Left = 569
+            Top = 3
+            Width = 67
+            Height = 13
+            Caption = 'Tipo Pessoa'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbcpf_cnpj: TLabel [5]
+            AlignWithMargins = True
+            Left = 3
+            Top = 95
+            Width = 58
+            Height = 13
+            Caption = 'lbcpf_cnpj'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbrg_ie: TLabel [6]
+            AlignWithMargins = True
+            Left = 111
+            Top = 95
+            Width = 39
+            Height = 13
+            Caption = 'lbrg_ie'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbEndereco: TLabel [7]
+            AlignWithMargins = True
+            Left = 219
+            Top = 95
+            Width = 52
+            Height = 13
+            Caption = 'Endere'#231'o'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbNEnde: TLabel [8]
+            AlignWithMargins = True
+            Left = 574
+            Top = 95
+            Width = 68
+            Height = 13
+            Caption = 'N'#186' Endere'#231'o'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbBairro: TLabel [9]
+            AlignWithMargins = True
+            Left = 2
+            Top = 136
+            Width = 34
+            Height = 13
+            Caption = 'Bairro'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbCidade: TLabel [10]
+            AlignWithMargins = True
+            Left = 219
+            Top = 136
+            Width = 38
+            Height = 13
+            Caption = 'Cidade'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbCep: TLabel [11]
+            AlignWithMargins = True
+            Left = 522
+            Top = 136
+            Width = 21
+            Height = 13
+            Caption = 'Cep'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbUf: TLabel [12]
+            AlignWithMargins = True
+            Left = 639
+            Top = 136
+            Width = 14
+            Height = 13
+            Caption = 'UF'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbTelefone: TLabel [13]
+            AlignWithMargins = True
+            Left = 2
+            Top = 176
+            Width = 49
+            Height = 13
+            Caption = 'Telefone'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object lbCelular: TLabel [14]
+            AlignWithMargins = True
+            Left = 137
+            Top = 176
+            Width = 39
+            Height = 13
+            Caption = 'Celular'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          inherited edtCodigo: TDBEdit
+            DataField = 'codigo'
+            TabOrder = 13
+          end
+          object edtRazaoNome: TDBEdit
+            Left = 3
+            Top = 70
+            Width = 302
+            Height = 21
+            DataField = 'razaosocial'
+            DataSource = DataSource
+            TabOrder = 1
+          end
+          object edtFantasiaApelido: TDBEdit
+            Left = 305
+            Top = 70
+            Width = 268
+            Height = 21
+            DataField = 'fantasia'
+            DataSource = DataSource
+            TabOrder = 2
+          end
+          object edtTipoCadastro: TDBEdit
+            Left = 574
+            Top = 70
+            Width = 120
+            Height = 21
+            DataField = 'tipopessoa'
+            DataSource = DataSource
+            ReadOnly = True
+            TabOrder = 14
+          end
+          object cbTipoPessoa: TDBComboBox
+            Left = 569
+            Top = 18
+            Width = 120
+            Height = 21
+            Style = csDropDownList
+            DataField = 'tipo'
+            DataSource = DataSource
+            ImeName = 'Portuguese (Brazilian ABNT)'
+            Items.Strings = (
+              'F'#237'sica'
+              'Jur'#237'dica')
+            TabOrder = 0
+            OnChange = cbTipoPessoaChange
+          end
+          object edt_cpf_cnpj: TDBEdit
+            Left = 3
+            Top = 112
+            Width = 108
+            Height = 21
+            DataField = 'cpf_cnpj'
+            DataSource = DataSource
+            TabOrder = 3
+            OnExit = edt_cpf_cnpjExit
+            OnKeyPress = edt_cpf_cnpjKeyPress
+          end
+          object edt_rg_ie: TDBEdit
+            Left = 111
+            Top = 112
+            Width = 108
+            Height = 21
+            DataField = 'rg_ie'
+            DataSource = DataSource
+            TabOrder = 4
+            OnKeyPress = edt_rg_ieKeyPress
+          end
+          object edtEndereco: TDBEdit
+            Left = 219
+            Top = 112
+            Width = 354
+            Height = 21
+            DataField = 'endereco'
+            DataSource = DataSource
+            TabOrder = 5
+          end
+          object edtNEnd: TDBEdit
+            Left = 574
+            Top = 112
+            Width = 120
+            Height = 21
+            DataField = 'n_endereco'
+            DataSource = DataSource
+            TabOrder = 6
+          end
+          object edtBairro: TDBEdit
+            Left = 0
+            Top = 152
+            Width = 219
+            Height = 21
+            DataField = 'bairro'
+            DataSource = DataSource
+            TabOrder = 7
+          end
+          object edtCidade: TDBEdit
+            Left = 219
+            Top = 152
+            Width = 302
+            Height = 21
+            DataField = 'cidade'
+            DataSource = DataSource
+            TabOrder = 8
+          end
+          object edtCep: TDBEdit
+            Left = 522
+            Top = 152
+            Width = 117
+            Height = 21
+            DataField = 'cep'
+            DataSource = DataSource
+            TabOrder = 9
+          end
+          object cbUF: TDBComboBox
+            Left = 639
+            Top = 152
+            Width = 55
+            Height = 21
+            Style = csDropDownList
+            DataField = 'uf'
+            DataSource = DataSource
+            ImeName = 'Portuguese (Brazilian ABNT)'
+            Items.Strings = (
+              'RO'
+              'AC'
+              'AM'
+              'RR'
+              'PA'
+              'AP'
+              'TO'
+              'MA'
+              'PI'
+              'CE'
+              'RN'
+              'PB'
+              'PE'
+              'AL'
+              'SE'
+              'BA'
+              'MG'
+              'ES'
+              'RJ'
+              'SP'
+              'PR'
+              'SC'
+              'RS'
+              'MS'
+              'MT'
+              'GO'
+              'DF')
+            TabOrder = 10
+            OnChange = cbTipoPessoaChange
+          end
+          object edtTelefone: TDBEdit
+            Left = 0
+            Top = 192
+            Width = 137
+            Height = 21
+            DataField = 'telefone'
+            DataSource = DataSource
+            TabOrder = 11
+          end
+          object edtCelular: TDBEdit
+            Left = 137
+            Top = 192
+            Width = 137
+            Height = 21
+            DataField = 'celular'
+            DataSource = DataSource
+            TabOrder = 12
+          end
+        end
+      end
+    end
+  end
+  inherited DataSource: TDataSource
+    Left = 8
+    Top = 211
+  end
+end

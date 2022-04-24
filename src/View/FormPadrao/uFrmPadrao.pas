@@ -91,17 +91,9 @@ end;
 
 procedure TFrmPadrao.BtnGravarClick(Sender: TObject);
 begin
-  if (ValidarCampos(self) = True) then
-  begin
-    aviso('Atenção... Campo Obrigatório ! '+GvarCaption);
-    exit;
-  end
-   else
-  begin
-    dbGrid.DataSource.DataSet.Refresh;
-    PageControl.ActivePageIndex := 0;
-    TratarBotoes('Novo');
-  end;
+  dbGrid.DataSource.DataSet.Refresh;
+  PageControl.ActivePageIndex := 0;
+  TratarBotoes('Novo');
 end;
 
 procedure TFrmPadrao.btnNovoClick(Sender: TObject);
@@ -156,14 +148,8 @@ procedure TFrmPadrao.FormKeyDown(Sender: TObject; var Key: Word;
 begin
   if Key = vk_escape then
   begin
-    if PageControl.ActivePageIndex = 0 then
-    begin
+    if PageControl.ActivePageIndex <> 1 then
       BtnSair.Click;
-    end
-     else if PageControl.ActivePageIndex = 1 then
-    begin
-      BtnCancelar.Click;
-    end;
   end;
 end;
 

@@ -386,18 +386,15 @@ begin
     begin
       {Grava o componente em uma variável}
       Componente := Aform.Components[i] as TCustomEdit;
-      {Para Validar os Campos a Tag do edit tem que estar = 99}
-      {Para mostrar a mensagem do campo adicionar o nome do campo no texthint}
-      if Componente.Tag = 99 then
+      {Verifica se o valor está vazio}
+      if (Componente.Text = '') {and (Componente.Name = AEdit.Name)} then
       begin
-        if (Componente.Text = '') then
-        begin
-          Resposta    := True;
-          GvarCaption := Componente.Hint;
-          if ATrue = false then
-            Componente.SetFocus;
-          break;
-        end;
+        Resposta    := True;
+        GvarCaption := Componente.Hint;
+        if ATrue = false then
+          Componente.SetFocus;
+
+        break;
       end;
     end;
   end;
@@ -761,7 +758,7 @@ end;
 { mensagem utilizado "Application.MessageBox" }
 function Aviso(Mensagem: String): String;
 begin
-  Application.MessageBox(PChar(Mensagem), 'Sistema', mb_ok + MB_ICONINFORMATION);
+  Application.MessageBox(PChar(Mensagem), 'Nexxus ERP', mb_ok + MB_ICONINFORMATION);
 end;
 
 function ValidaCNPJ(numCNPJ: string): boolean;

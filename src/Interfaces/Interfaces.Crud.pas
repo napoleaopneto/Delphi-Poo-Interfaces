@@ -10,7 +10,6 @@ uses
      ['{6C05D1FE-EE28-4029-8083-D56DF4B867E9}']
      function _Open(aTabela : string; aDataSource : TDataSource) : iSQLOpen; overload;
      function _Open(aTabela : string; aParam : String; aDataSource : TDataSource) : iSQLOpen; overload;
-     function _Open(aTabela : string; aUsuario : String; aSenha : String; aDataSource : TDataSource) : iSQLOpen; overload;
    end;
 
    iSQLInsert = interface

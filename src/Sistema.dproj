@@ -83,7 +83,7 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <DCC_ExeOutput>..\Bin\</DCC_ExeOutput>
+        <DCC_ExeOutput>D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\Bin</DCC_ExeOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
@@ -96,7 +96,7 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <DCC_ExeOutput>..\Bin\</DCC_ExeOutput>
+        <DCC_ExeOutput>D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\Bin</DCC_ExeOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
@@ -148,22 +148,6 @@
         </DCCReference>
         <DCCReference Include="Controller\Controller.Conexao.pas"/>
         <DCCReference Include="Bibliotecas\Funcoes.pas"/>
-        <DCCReference Include="View\Compras\View.Compras.Cadastros.Grupos.pas">
-            <Form>FrmCadGrupos</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="View\Compras\View.Compras.Cadastros.SubGrupos.pas">
-            <Form>FrmCadSubGrupos</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="View\View.LoginSistema.pas">
-            <Form>FrmLoginSistema</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="View\FormPadrao\View.Consulta.pas">
-            <Form>FrmConsultaPadrao</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

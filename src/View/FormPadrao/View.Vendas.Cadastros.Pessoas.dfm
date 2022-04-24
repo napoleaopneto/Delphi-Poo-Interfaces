@@ -98,6 +98,8 @@ inherited FrmCadPessoas: TFrmCadPessoas
         inherited pnCentralTabCadastro: TPanel
           Width = 701
           Height = 473
+          ExplicitLeft = 2
+          ExplicitTop = -8
           ExplicitWidth = 701
           ExplicitHeight = 473
           inherited lbCodigo: TLabel
@@ -304,7 +306,6 @@ inherited FrmCadPessoas: TFrmCadPessoas
             TabOrder = 13
           end
           object edtRazaoNome: TDBEdit
-            Tag = 99
             Left = 3
             Top = 70
             Width = 302
@@ -314,7 +315,6 @@ inherited FrmCadPessoas: TFrmCadPessoas
             TabOrder = 1
           end
           object edtFantasiaApelido: TDBEdit
-            Tag = 99
             Left = 305
             Top = 70
             Width = 268
@@ -348,7 +348,6 @@ inherited FrmCadPessoas: TFrmCadPessoas
             OnChange = cbTipoPessoaChange
           end
           object edt_cpf_cnpj: TDBEdit
-            Tag = 99
             Left = 3
             Top = 112
             Width = 108
@@ -360,7 +359,6 @@ inherited FrmCadPessoas: TFrmCadPessoas
             OnKeyPress = edt_cpf_cnpjKeyPress
           end
           object edt_rg_ie: TDBEdit
-            Tag = 99
             Left = 111
             Top = 112
             Width = 108

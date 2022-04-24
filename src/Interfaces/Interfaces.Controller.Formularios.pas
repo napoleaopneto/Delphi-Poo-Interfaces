@@ -13,9 +13,6 @@ uses
        function CadastroBancos : iFormularios;
        function CadastroUsuarios : iFormularios;
        function CadastroUnidades : iFormularios;
-       function CadastroGrupos : iFormularios;
-       function CadastroSubGrupos : iFormularios;
-       function Consulta : iFormularios;
      end;
 
 implementation

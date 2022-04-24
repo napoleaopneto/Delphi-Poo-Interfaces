@@ -23,6 +23,7 @@ inherited FrmCadUnidade: TFrmCadUnidade
     inherited PageControl: TPageControl
       Width = 347
       Height = 280
+      ExplicitLeft = 113
       ExplicitWidth = 347
       ExplicitHeight = 280
       inherited TabConsulta: TTabSheet
@@ -117,7 +118,6 @@ inherited FrmCadUnidade: TFrmCadUnidade
             ExplicitWidth = 70
           end
           object edtDescricao: TDBEdit
-            Tag = 99
             Left = 3
             Top = 62
             Width = 262
@@ -127,7 +127,6 @@ inherited FrmCadUnidade: TFrmCadUnidade
             TabOrder = 1
           end
           object edtUnidade: TDBEdit
-            Tag = 99
             Left = 267
             Top = 62
             Width = 62

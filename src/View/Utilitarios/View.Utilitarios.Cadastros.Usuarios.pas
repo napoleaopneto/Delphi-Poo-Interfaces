@@ -9,12 +9,6 @@ uses
 
 type
   TFrmCadUsuarios = class(TFrmPadrao)
-    edtDescricao: TDBEdit;
-    lbDescricao: TLabel;
-    DBEdit2: TDBEdit;
-    lbSenha: TLabel;
-    Label1: TLabel;
-    cbStatus: TDBComboBox;
   private
     { Private declarations }
   public
