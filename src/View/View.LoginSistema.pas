@@ -16,20 +16,23 @@ uses
   Vcl.StdCtrls,
   Funcoes,
   Controller.Crud,
-  Interfaces.Crud, Data.DB;
+  Interfaces.Crud, Data.DB, Vcl.Imaging.pngimage;
 
 type
   TFrmLoginSistema = class(TForm)
     pnCentral: TPanel;
-    pnMeio: TPanel;
-    imgLogo: TImage;
     lbUsuario: TLabel;
     edtUsuario: TEdit;
     lbSenha: TLabel;
     edtSenha: TEdit;
-    btnEntrar: TButton;
-    btnSair: TButton;
     DataSource: TDataSource;
+    Shape1: TShape;
+    imgCard: TImage;
+    imgLogo: TImage;
+    btnEntrar: TImage;
+    btnSair: TImage;
+    pnMeio: TPanel;
+    Label1: TLabel;
     procedure btnSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnEntrarClick(Sender: TObject);
@@ -72,7 +75,7 @@ end;
 
 procedure TFrmLoginSistema.FormCreate(Sender: TObject);
 begin
-  imgLogo.Picture.LoadFromFile('..\Bin\Imagens\imgLogo.jpg');
+  //imgLogo.Picture.LoadFromFile('..\Bin\Imagens\imgLogo.jpg');
 end;
 
 procedure TFrmLoginSistema.FormKeyPress(Sender: TObject; var Key: Char);

@@ -2,8 +2,8 @@ object FrmPrincipal: TFrmPrincipal
   Left = 343
   Top = 231
   Caption = 'Sistema de Vendas POO-Interface'
-  ClientHeight = 639
-  ClientWidth = 1270
+  ClientHeight = 391
+  ClientWidth = 589
   Color = clBtnFace
   CustomTitleBar.CaptionAlignment = taCenter
   Font.Charset = DEFAULT_CHARSET
@@ -23,22 +23,26 @@ object FrmPrincipal: TFrmPrincipal
   object pnPrincipal: TPanel
     Left = 0
     Top = 0
-    Width = 1270
-    Height = 620
+    Width = 589
+    Height = 372
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitWidth = 1270
+    ExplicitHeight = 620
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 620
-    Width = 1270
+    Top = 372
+    Width = 589
     Height = 19
     Panels = <
       item
         Text = 'Empresa:'
         Width = 200
       end>
+    ExplicitTop = 620
+    ExplicitWidth = 1270
   end
   object MainMenu: TMainMenu
     Left = 24
