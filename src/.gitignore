@@ -1,0 +1,28 @@
+# General .gitignore file suitable for Delphi 7 to XE
+
+*.ddp
+*.exe
+*.dll
+*.bpl
+*.bpi
+*.dcp
+*.so
+*.apk
+*.drc
+*.map
+*.dres
+*.rsm
+*.tds
+*.local
+*.identcache
+*.projdata
+*.tvsconfig
+*.dsk
+__history/
+*.~*
+*.dcu
+*.dof
+*.cfg
+
+# Add build directories below 
+# (Exe not actually needed since it is covered by *.exe above)
