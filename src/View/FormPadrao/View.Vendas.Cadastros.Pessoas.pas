@@ -62,7 +62,6 @@ type
     procedure FormShow(Sender: TObject);
     procedure cbTipoPessoaChange(Sender: TObject);
     procedure edt_cpf_cnpjKeyPress(Sender: TObject; var Key: Char);
-    procedure edt_rg_ieKeyPress(Sender: TObject; var Key: Char);
     procedure edt_cpf_cnpjExit(Sender: TObject);
   private
     { Private declarations }
@@ -87,58 +86,58 @@ implementation
 
 procedure TFrmCadPessoas.BtnCancelarClick(Sender: TObject);
 begin
-  FCancelar
-    := TControllerCrud
-      .New
-        ._CancelSQL
-          ._Cancelar(DataSource);
   inherited;
+  FCancelar
+   := TControllerCrud
+    .New
+     ._CancelSQL
+      ._Cancelar(DataSource);
   RetornarRegistros();
 end;
 
 procedure TFrmCadPessoas.BtnExcluirClick(Sender: TObject);
 begin
-  FDelete
-    := TControllerCrud
-      .New
-        ._DeleteSQL
-          ._Delete('pessoas',IntToStr(dbGrid.DataSource.DataSet.Fields[0].AsInteger));
   inherited;
+  FDelete
+   := TControllerCrud
+    .New
+     ._DeleteSQL
+      ._Delete('pessoas',IntToStr(dbGrid.DataSource.DataSet.Fields[0].AsInteger));
   RetornarRegistros();
 end;
 
 procedure TFrmCadPessoas.BtnGravarClick(Sender: TObject);
 begin
+  inherited;
   if (BtnGravar.Caption = 'Editar') then
   begin
     FUpdate
-      := TControllerCrud
-       .New
-        ._UpdateSQL
-         .TipoFormulario(Self.Caption)
-          ._Update('pessoas',DataSource);
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        .TipoFormulario(Self.Caption)
+         ._Update('pessoas',DataSource);
   end
     else if (BtnGravar.Caption = 'Gravar') then
   begin
     FUpdate
-      := TControllerCrud
-       .New
-        ._UpdateSQL
-         .TipoFormulario(Self.Caption)
-          ._Update('pessoas',DataSource);
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        .TipoFormulario(Self.Caption)
+         ._Update('pessoas',DataSource);
   end;
-  inherited;
   RetornarRegistros();
 end;
 
 procedure TFrmCadPessoas.btnNovoClick(Sender: TObject);
 begin
-  FInsert
-    := TControllerCrud
-     .New
-      ._InsertSQL
-       ._Insert('pessoas',DataSource);
   inherited;
+  FInsert
+   := TControllerCrud
+    .New
+     ._InsertSQL
+      ._Insert('pessoas',DataSource);
   edtRazaoNome.SetFocus;
   cbTipoPessoa.ItemIndex := 0;
   cbTipoPessoaChange(nil);
@@ -154,20 +153,27 @@ begin
     lbcpf_cnpj.Caption := 'CPF';
     lbrg_ie.Caption := 'RG';
   end
-   else
+   else if cbTipoPessoa.ItemIndex = 1 then
+  begin
+    lbRazaoNome.Caption := 'Nome';
+    lbFantasiaApelido.Caption := 'Apelido';
+    lbcpf_cnpj.Caption := 'CPF';
+    lbrg_ie.Caption := 'RG';
+  end
+    else if cbTipoPessoa.ItemIndex = 2 then
   begin
     lbRazaoNome.Caption := 'Razão Social';
     lbFantasiaApelido.Caption := 'Nome Fantasia';
     lbcpf_cnpj.Caption := 'CNPJ';
     lbrg_ie.Caption := 'IE';
-  end;
+  end
 end;
 
 procedure TFrmCadPessoas.edt_cpf_cnpjExit(Sender: TObject);
 begin
   if edt_cpf_cnpj.text <> '' then
   begin
-    if cbTipoPessoa.ItemIndex = 0 then
+    if cbTipoPessoa.ItemIndex = 1 then
     begin
       edt_cpf_cnpj.Text := FormataCPF(edt_cpf_cnpj.Text);
       if ValidaCPF(edt_cpf_cnpj.Text) = false then
@@ -177,7 +183,7 @@ begin
         abort
       end;
     end
-     else
+     else if cbTipoPessoa.ItemIndex = 2 then
     begin
       edt_cpf_cnpj.Text := FormataCNPJ(edt_cpf_cnpj.Text);
       if ValidaCNPJ(edt_cpf_cnpj.Text) = false then
@@ -197,12 +203,6 @@ begin
    key := #0;
 end;
 
-procedure TFrmCadPessoas.edt_rg_ieKeyPress(Sender: TObject; var Key: Char);
-begin
- inherited;
- if ((key in ['0'..'9'] = false) and (word(key) <> vk_back)) then
-   key := #0;
-end;
 
 procedure TFrmCadPessoas.FormShow(Sender: TObject);
 begin
@@ -232,5 +232,4 @@ begin
   if (aTipo = 'Cadastro de Funcionarios') then
     Result := 'Funcionarios';
 end;
-
 end.

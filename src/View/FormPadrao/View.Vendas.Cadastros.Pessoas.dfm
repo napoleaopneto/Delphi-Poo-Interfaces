@@ -306,6 +306,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             TabOrder = 13
           end
           object edtRazaoNome: TDBEdit
+            Tag = 99
             Left = 3
             Top = 70
             Width = 302
@@ -315,6 +316,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             TabOrder = 1
           end
           object edtFantasiaApelido: TDBEdit
+            Tag = 99
             Left = 305
             Top = 70
             Width = 268
@@ -334,6 +336,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             TabOrder = 14
           end
           object cbTipoPessoa: TDBComboBox
+            Tag = 99
             Left = 569
             Top = 18
             Width = 120
@@ -342,12 +345,14 @@ inherited FrmCadPessoas: TFrmCadPessoas
             DataField = 'tipo'
             DataSource = DataSource
             Items.Strings = (
+              ''
               'F'#237'sica'
               'Jur'#237'dica')
             TabOrder = 0
             OnChange = cbTipoPessoaChange
           end
           object edt_cpf_cnpj: TDBEdit
+            Tag = 99
             Left = 3
             Top = 112
             Width = 108
@@ -359,6 +364,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             OnKeyPress = edt_cpf_cnpjKeyPress
           end
           object edt_rg_ie: TDBEdit
+            Tag = 99
             Left = 111
             Top = 112
             Width = 108
@@ -366,7 +372,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             DataField = 'rg_ie'
             DataSource = DataSource
             TabOrder = 4
-            OnKeyPress = edt_rg_ieKeyPress
+            OnKeyPress = edt_cpf_cnpjKeyPress
           end
           object edtEndereco: TDBEdit
             Left = 219
@@ -414,6 +420,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             TabOrder = 9
           end
           object cbUF: TDBComboBox
+            Tag = 99
             Left = 639
             Top = 152
             Width = 55
@@ -423,6 +430,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             DataSource = DataSource
             ImeName = 'Portuguese (Brazilian ABNT)'
             Items.Strings = (
+              ''
               'RO'
               'AC'
               'AM'
@@ -461,6 +469,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             DataField = 'telefone'
             DataSource = DataSource
             TabOrder = 12
+            OnKeyPress = edt_cpf_cnpjKeyPress
           end
           object edtCelular: TDBEdit
             Left = 137
@@ -470,6 +479,7 @@ inherited FrmCadPessoas: TFrmCadPessoas
             DataField = 'celular'
             DataSource = DataSource
             TabOrder = 11
+            OnKeyPress = edt_cpf_cnpjKeyPress
           end
         end
       end

@@ -7,14 +7,14 @@ inherited FrmCadUsuarios: TFrmCadUsuarios
       inherited TabConsulta: TTabSheet
         inherited pnTopTabConsulta: TPanel
           inherited lbConsultar: TLabel
-            Width = 718
+            Width = 569
           end
         end
       end
       inherited TabCadastro: TTabSheet
         inherited pnCentralTabCadastro: TPanel
           inherited lbCodigo: TLabel
-            Width = 718
+            Width = 569
           end
         end
       end

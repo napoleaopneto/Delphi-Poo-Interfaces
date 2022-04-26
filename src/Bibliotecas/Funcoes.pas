@@ -1,26 +1,19 @@
 {
 Mascaras para edit
-
 uses
  System.MaskUtils;
-
   // Aplicando máscara do CPF
   ShowMessage(FormatMaskText('000\.000\.000\-00;0;', '51895752337'));
-
   // Aplicando máscara do CNPJ
   ShowMessage(FormatMaskText('00\.000\.000\/0000\-00;0;', '44732264000105'));
-
   // Aplicando máscara do CEP
   ShowMessage(FormatMaskText('00000\-000;0;', '99200000'));
-
   // Aplicando máscara dE TELEFONE
   ShowMessage(FormatMaskText('\(00\)000000009;0;', '11978563215'));
   ShowMessage(FormatMaskText('\(00\)000000009;0;', '5434491111'));
 }
 unit Funcoes;
-
 interface
-
 uses
  System.Generics.Collections,
  Vcl.Graphics,
@@ -50,10 +43,8 @@ uses
  IdCoderMIME,
  jpeg,
  IdGlobalProtocols;
-
  Var
   GvarCaption : String;
-
 function TestaInternet: boolean;
 function TestaServidor: boolean;
 Function TratarCaracter(texto : String) : String;
@@ -81,7 +72,7 @@ function Arredondar(Valor: Double; Dec: Integer): Double;
 function ProcessExists(exeFileName: string): Boolean;
 function FindProcesses (aKey : String; aList : TList = nil) : Integer;
 function KillProcess (aProcessId : Cardinal) : boolean;
-function ValidarCampos(Aform : Tform; ATrue : Boolean = false; AEdit : TCustomEdit = nil) : boolean;
+function ValidarCampos(Aform : Tform; ATrue : Boolean = false) : boolean;
 procedure PreencheComboBox(ACombo: TCustomCombo; AQuery: Tfdquery; AIndex : integer);
 function ConvertData(Data: TDate): String;
 function FormatarHoras(time: double; havDay: boolean): string;
@@ -89,25 +80,19 @@ procedure FindReplace(const Enc, subs: String; var Texto: TRichEdit);
 function MinSec(Min: String): Integer;
 procedure TabEnter(Key :Char);
 function SegundosMinutos(Minutos : Extended) :  Extended;
-
 {Metedos para downloads de arquivos}
 function idUnique(id: string): string;
 function download(clientUrl, mediaKey, tipo, id: string) :string;
 function DownLoadInternetFile(Source, Dest: string): Boolean;
 procedure DownloadFile(Source, Dest: string);
 function shell(program_path:  string):  string;
-
 function base64encode(const Text : ansiString): ansiString;
 function base64Decode(const Text : ansiString): ansiString;
-
 function GetMIMEType(FileExt: string): string;
 function GetFile(const AFile: String): TStream;
-
 implementation
-
 uses
   Vcl.Controls, Vcl.Dialogs;
-
 function FormataCPF(Numero: string): string;
 var
   tmp, resultado: string;
@@ -131,7 +116,6 @@ begin
   tmp := tmp + copy(resultado, 10, 2);
   Result := tmp;
 end;
-
 function GetFile(const AFile: String): TStream;
 var
   Path: String;
@@ -140,7 +124,6 @@ begin
   Result := TFileStream.Create(Path + AFile, fmOpenRead or fmShareDenyNone);
   Result.Position := 0;
 end;
-
 function GetMIMEType(FileExt: string): string;
 var
   I: Integer;
@@ -169,7 +152,6 @@ begin
     end;
   end;
 end;
-
 function base64encode(const Text : ansiString): ansiString;
 var
   Encoder : TIdEncoderMime;
@@ -181,7 +163,6 @@ begin
     FreeAndNil(Encoder);
   end
 end;
-
 function base64Decode(const Text : ansiString): ansiString;
 var
   Decoder : TIdDecoderMime;
@@ -193,7 +174,6 @@ begin
     FreeAndNil(Decoder)
   end
 end;
-
 function shell(program_path:  string):  string;
 var
   s1: string;
@@ -201,7 +181,6 @@ begin
   s1 := ExtractFilePath(Application.ExeName)+'decryptFile.dll ';
   ShellExecute(0, nil, 'cmd.exe', PChar('/c '+ s1 + program_path ), PChar(s1 + program_path), SW_HIDE);
 end;
-
 procedure DownloadFile(Source, Dest: string);
 var
   IdHTTP1 : TIdHTTP;
@@ -218,7 +197,6 @@ begin
     IdHTTP1.Free;
   end;
 end;
-
 function DownLoadInternetFile(Source, Dest: string): Boolean;
 var ret:integer;
 begin
@@ -235,7 +213,6 @@ begin
     Result := False;
   end;
 end;
-
 function idUnique(id: string): string;
 var
   gID: TGuid;
@@ -243,7 +220,6 @@ begin
   CreateGUID(gID);
   result := copy(gID.ToString, 2, length(gID.ToString)  - 2);
 end;
-
 function download(clientUrl, mediaKey, tipo, id: string) :string;
 var
   form, imagem, diretorio, arq:string;
@@ -265,7 +241,6 @@ begin
       Result:= imagem + '.' + tipo;
     end;
 end;
-
 function SegundosMinutos(Minutos : Extended) :  Extended;
  var
   Seg : Extended;
@@ -277,10 +252,8 @@ begin
   DivSao := Seg / 60;
   Mult := (DivSao*3600);
   Total := (Mult*1000);
-
   result :=  Total;
 end;
-
 procedure TabEnter(Key :Char);
 begin
   If Key = #13 then //Se o comando for igual a enter
@@ -289,12 +262,10 @@ begin
     Screen.ActiveForm.Perform(WM_NextDlgCtl, 0, 0);
   End;
 end;
-
 function MinSec(Min: String): Integer;
 begin
   Result := (StrToInt(Copy(Min,1,2))*60) + StrToInt(Copy(Min,4,2));
 end;
-
 function FormatarHoras(time: double; havDay: boolean): string;
 var
   dias, Horas: double;
@@ -303,7 +274,6 @@ var
 begin
   dias := Trunc(time);
   Horas := frac(time);
-
   if havDay then
     if dias > 1 then
     begin
@@ -328,12 +298,10 @@ begin
     Result := IntToStr(horas24) + copy(aux1, Pos1, Length(aux1));
   end;
 end;
-
 function ConvertData(Data: TDate): String;
 begin
    Result := QuotedStr(FormatDateTime('yyyy-mm-dd', Data));
 end;
-
 function FormataCNPJ(Numero: string): string;
 var
   tmp, resultado: string;
@@ -357,7 +325,6 @@ begin
   tmp := tmp + copy(resultado, 9, 4) + '-' + copy(resultado, 13, 2);
   Result := tmp;
 end;
-
 procedure PreencheComboBox(ACombo: TCustomCombo; AQuery: Tfdquery; AIndex : integer);
 begin
   ACombo.Items.Clear;
@@ -369,48 +336,63 @@ begin
   end;
   ACombo.ItemIndex := Aindex;
 end;
-
-function ValidarCampos(Aform : Tform; ATrue : Boolean = false; AEdit : TCustomEdit = nil) : boolean;
+function ValidarCampos(Aform : Tform; ATrue : Boolean = false) : boolean;
  var
    i : Integer;
+   x : integer;
    Resposta: Boolean;
-   Componente: TCustomEdit;
+   ComponenteEdit: TCustomEdit;
+   ComponenteCombo: TCustomComboBox;
 begin
-  {Inicializa a resposta}
   Resposta := False;
-  {Executa uma repetição em todos os componentes}
   for i := 0 to Aform.ComponentCount -1 do
   begin
-    {Verifica se o componente é um editBox}
     if Aform.Components[i] is TCustomEdit then
     begin
-      {Grava o componente em uma variável}
-      Componente := Aform.Components[i] as TCustomEdit;
-      {Verifica se o valor está vazio}
-      if (Componente.Text = '') {and (Componente.Name = AEdit.Name)} then
+      ComponenteEdit := Aform.Components[i] as TCustomEdit;
+      if ComponenteEdit.Tag = 99 then {Colocar 99 na tag do campo que gostaria de validar}
       begin
-        Resposta    := True;
-        GvarCaption := Componente.Hint;
-        if ATrue = false then
-          Componente.SetFocus;
-
-        break;
+        if (ComponenteEdit.Text = '') then
+        begin
+          Resposta    := True;
+          GvarCaption := ComponenteEdit.Hint;
+          if ATrue = false then
+            ComponenteEdit.SetFocus;
+          break;
+        end;
+      end;
+    end;
+  end;
+   for x := 0 to Aform.ComponentCount -1 do
+  begin
+    if Aform.Components[x] is TCustomComboBox then
+    begin
+      ComponenteCombo := Aform.Components[x] as TCustomComboBox;
+      if ComponenteCombo.Tag = 99 then {Colocar 99 na tag do campo que gostaria de validar}
+      begin
+        if (ComponenteCombo.ItemIndex = 0) then
+        begin
+          Resposta    := True;
+          GvarCaption := ComponenteCombo.Hint;
+          if ATrue = false then
+          begin
+            ComponenteCombo.SetFocus;
+          end;
+          break;
+        end;
       end;
     end;
   end;
   Result := Resposta;
 end;
-
 procedure MostraAviso(ATexto: String);
 begin
   Application.MessageBox(PChar(ATexto), PChar('Aviso'), MB_Ok + MB_ICONWARNING);
 end;
-
 procedure MostraErro(ATexto: String);
 begin
   Application.MessageBox(PChar(ATexto), PChar('Aviso'), MB_Ok + MB_ICONERROR)
 end;
-
 function PerguntaSimNao(const ATitulo, ATexto: String; ANoDefault: boolean = false): boolean;
 begin
   if ANoDefault then
@@ -418,7 +400,6 @@ begin
   else
     Result := Application.MessageBox(PChar(ATexto), PChar(ATitulo), MB_YesNo + MB_ICONQUESTION) = idYes;
 end;
-
 function FindProcesses (aKey : String; aList : TList = nil) : Integer;
 var
  szProcessName : Array [0..1024] of Char;
@@ -430,30 +411,23 @@ var
  i             : UINT;
  hMod          : HMODULE;
 begin
-
  Result:= 0;
  aKey:= lowercase(akey);
-
  if not (EnumProcesses(@aProcesses, sizeof(aProcesses), cbNeeded)) then
     exit;
-
  // Calculate how many process identifiers were returned.
  cProcesses := cbNeeded div sizeof(DWORD);
-
  // Print the name and process identifier for each process.
  for i:= 0 to cProcesses - 1 do
  begin
    szProcessName := 'unknown';
    hProcess := OpenProcess(PROCESS_QUERY_INFORMATION or PROCESS_VM_READ,
                            FALSE, aProcesses[i]);
-
    // Get the process name.
    if (hProcess <> 0) then
       if (EnumProcessModules(hProcess, @hMod, sizeof(hMod),cbNeeded)) then
          GetModuleBaseName (hProcess, hMod, szProcessName, sizeof(szProcessName));
-
    ProcessName:= lowercase (szProcessName);
-
    CloseHandle(hProcess);
    if pos (aKey, ProcessName) <> 0 then
    begin
@@ -464,28 +438,23 @@ begin
        exit;
    end;
  end;
-
  if aList <> nil then
     Result:= aList.count
  else
     Result:=0;
 end;
-
 function KillProcess (aProcessId : Cardinal) : boolean;
 var
   hProcess : integer;
 begin
-
   hProcess:= OpenProcess(PROCESS_ALL_ACCESS, TRUE, aProcessId);
   Result:= false;
-
   if (hProcess <>0 ) then
   begin
     Result:= TerminateProcess(hProcess, 0);
     exit;
   end;
 end;
-
 function ProcessExists(exeFileName: string): Boolean;
 var
   ContinueLoop: BOOL;
@@ -508,7 +477,6 @@ begin
   end;
   CloseHandle(FSnapshotHandle);
 end;
-
 function Arredondar(Valor: Double; Dec: Integer): Double;
 var
   Valor1,
@@ -522,7 +490,6 @@ begin
   Numero3:=Round(Numero2);
   Result:=(Numero3 / (Exp(Ln(10) * Dec)));
 end;
-
 function TBRound(Value: Extended; Decimals: integer): Extended;
 var
   Factor, Fraction: Extended;
@@ -539,7 +506,6 @@ begin
     Result := Result - 1;
   Result := Result / Factor;
 end;
-
 procedure FindReplace(const Enc, subs: String; var Texto: TRichEdit);
 Var
    i, Posicao: Integer;
@@ -558,9 +524,7 @@ Begin
         end;
       until Posicao = 0;
   end;
-
 end;
-
 function RECharIndexByPos(RichEdit: TRichEdit; X, Y: Integer): Integer;
 var
   P: TPoint;
@@ -568,7 +532,6 @@ begin
   P := Point(X, Y);
   Result := SendMessage(RichEdit.Handle, EM_CHARFROMPOS, 0, Longint(@P));
 end;
-
 function StreamToString(aStream: TStream): string;
 var
   SS: TStringStream;
@@ -587,7 +550,6 @@ begin
     Result := '';
   end;
 end;
-
 function TestaServidor: boolean;
  var
   IdTCPClient: TIdTCPClient;
@@ -609,7 +571,6 @@ begin
   end;
   IdTCPClient.Disconnect;
 end;
-
 function GerarTimer(Data: TDateTime):  String;
  var
   iData1, iData2:  String;
@@ -619,7 +580,6 @@ begin
  iData1 := iData2;
  Result := iData1;
 end;
-
 function MD5String(const Value: string): string;
 var
     xMD5: TIdHashMessageDigest5;
@@ -631,7 +591,6 @@ begin
       xMD5.Free;
     end;
 end;
-
 { Esta funcao é semelhante a funcao de
 Criptografia mais com o objetivo de descriptografar a string }
 Function DesCriptografa(texto:string;chave:integer):String;
@@ -649,7 +608,6 @@ begin
     result:=retorno;
   end;
 end;
-
 { Esta funcao tem como objetivo criptografar uma string utilizando o
 código ASCII de cada caracter e somando a esse código o valor da CHAVE}
 Function Criptografa(texto:string;chave:integer):String;
@@ -667,7 +625,6 @@ begin
     result:=retorno;
   end;
 end;
-
   //funcao que retorno o código ASCII dos caracteres
 function AsciiToInt(Caracter: Char): Integer;
 var
@@ -681,7 +638,6 @@ begin
   end;
   Result := i;
 end;
-
 function GetNewID(Prefix: String): string;
 var
   reg: array [1 .. 7] of word;
@@ -694,11 +650,9 @@ begin
   else
     while length(Prefix) < 2 do
       Prefix := ' ' + Prefix;
-
   Result := '';
   DecodeDate(Date, reg[1], reg[2], reg[3]);
   reg[1] := StrToInt(Copy(IntToStr(reg[1]), 3, 2));
-
   { Esta corrige o ano para apenas dois digitos, por forma a ser inferior a
   255. em vez de reg[1] estava a variavel ano. }
   DecodeTime(Time, reg[4], reg[5], reg[6], reg[7]);
@@ -708,7 +662,6 @@ begin
   begin
     if (i >= 2) and (i <= 6) then
       reg[i] := reg[i] + random(100);
-
     { O random é uma segurança adicional, pois como o ano e os milisegundos não
     são usados na totalidade, havia uma pequena possibilidade de sair
     duplicado... Assim é quase impossivel }
@@ -716,14 +669,12 @@ begin
   end;
   Result := Prefix + Result;
 end;
-
 function GetStrNumber(const S: string): string;
 var
   vText : PChar;
 begin
   vText := PChar(S);
   Result := '';
-
   while (vText^ <> #0) do
   begin
     {$IFDEF UNICODE}
@@ -732,17 +683,14 @@ begin
     if vText^ in ['0'..'9'] then
     {$ENDIF}
       Result := Result + vText^;
-
     Inc(vText);
   end;
 end;
-
 function IsValidCelular(aCelNumber: string): boolean;
 var
   ipRegExp, vFone: string;
 begin
   Result := False;
-
   { Recuperando somente os numeros }
   vFone := GetStrNumber(aCelNumber);
   try
@@ -754,13 +702,11 @@ begin
       ShowMessage(E.ClassName + ' : ' + E.Message);
   end;
 end;
-
 { mensagem utilizado "Application.MessageBox" }
 function Aviso(Mensagem: String): String;
 begin
   Application.MessageBox(PChar(Mensagem), 'Nexxus ERP', mb_ok + MB_ICONINFORMATION);
 end;
-
 function ValidaCNPJ(numCNPJ: string): boolean;
 var
   cnpj: string;
@@ -820,16 +766,12 @@ if ret then
 		end;
 	//Inválidos
 	case AnsiIndexStr(cnpj,['00000000000000','11111111111111','22222222222222','33333333333333','44444444444444',
-
 						   '55555555555555','66666666666666','77777777777777','88888888888888','99999999999999']) of
-
 		0..9:   ret:=False;
-
 		end;
 	end;
 ValidaCNPJ:=ret;
 end;
-
 function ValidaCPF(numCPF: string): boolean;
 var
 	cpf: string;
@@ -871,15 +813,10 @@ if ret then
 			if dg2 = StrToInt(cpf[11]) then
 				ret:=True;
 		//Inválidos
-
 		case AnsiIndexStr(cpf,['00000000000','11111111111','22222222222','33333333333','44444444444',
-
 							   '55555555555','66666666666','77777777777','88888888888','99999999999']) of
-
 			0..9:   ret:=False;
-
 			end;
-
 		end
 	else
 		begin
@@ -890,7 +827,6 @@ if ret then
 	end;
 ValidaCPF:=ret;
 end;
-
 function TestaInternet: boolean;
  var
   IdTCPClient: TIdTCPClient;
@@ -912,7 +848,6 @@ begin
   end;
   IdTCPClient.Disconnect;
 end;
-
 Function TratarCaracter(texto : String) : String;
 Begin
   While pos('-', Texto) <> 0 Do
@@ -947,32 +882,22 @@ Begin
     delete(Texto,pos('9', Texto),1);
     Result := Texto;
 End;
-
 Function TratarCaracterSomente(texto : String) : String;
 Begin
   While pos('-', Texto) <> 0 Do
     delete(Texto,pos('-', Texto),1);
-
   While pos('.', Texto) <> 0 Do
     delete(Texto,pos('.', Texto),1);
-
   While pos('/', Texto) <> 0 Do
     delete(Texto,pos('/', Texto),1);
-
   While pos(',', Texto) <> 0 Do
     delete(Texto,pos(',', Texto),1);
-
   While pos(' ', Texto) <> 0 Do
    delete(Texto,pos(' ', Texto),1);
-
   While pos('(', Texto) <> 0 Do
    delete(Texto,pos('(', Texto),1);
-
   While pos(')', Texto) <> 0 Do
    delete(Texto,pos(')', Texto),1);
-
    Result := Texto;
 End;
-
 end.
-

@@ -80,8 +80,8 @@ begin
   TAbrirFormularios
    .New
     .CadastroPessoas
-      .CadastroPessoas(Self,'Cadastro de Clientes')
-       .ShowModal;
+     .CadastroPessoas(Self,'Cadastro de Clientes')
+      .ShowModal;
 end;
 
 procedure TFrmPrincipal.TabEnter(Key: Char);
@@ -98,8 +98,8 @@ begin
   TAbrirFormularios
    .New
     .CadastroPessoas
-      .CadastroPessoas(Self,'Cadastro de Fabricantes')
-       .ShowModal;
+     .CadastroPessoas(Self,'Cadastro de Fabricantes')
+      .ShowModal;
 end;
 
 procedure TFrmPrincipal.mComprasCadastros_FornecedoresClick(Sender: TObject);
@@ -107,8 +107,8 @@ begin
   TAbrirFormularios
    .New
     .CadastroPessoas
-      .CadastroPessoas(Self,'Cadastro de Fornecedores')
-       .ShowModal;
+     .CadastroPessoas(Self,'Cadastro de Fornecedores')
+      .ShowModal;
 end;
 
 procedure TFrmPrincipal.mComprasCadastros_ProdutosClick(Sender: TObject);
@@ -143,8 +143,8 @@ begin
   TAbrirFormularios
    .New
     .CadastroPessoas
-      .CadastroPessoas(Self,'Cadastro de Funcionarios')
-       .ShowModal;
+     .CadastroPessoas(Self,'Cadastro de Funcionarios')
+      .ShowModal;
 end;
 
 procedure TFrmPrincipal.mUtilitariosCadastros_EmpresaClick(Sender: TObject);
@@ -152,8 +152,8 @@ begin
   TAbrirFormularios
    .New
     .CadastroPessoas
-      .CadastroPessoas(Self,'Cadastro de Empresas')
-       .ShowModal;
+     .CadastroPessoas(Self,'Cadastro de Empresas')
+      .ShowModal;
 end;
 
 procedure TFrmPrincipal.mUtilitariosCadastros_UsuariosClick(Sender: TObject);

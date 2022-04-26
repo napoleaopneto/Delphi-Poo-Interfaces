@@ -54,55 +54,53 @@ implementation
 
 procedure TFrmCadProdutos.BtnCancelarClick(Sender: TObject);
 begin
+  inherited;
   FCancelar
     := TControllerCrud
-      .New
-        ._CancelSQL
-          ._Cancelar(DataSource);
-
-  inherited;
+     .New
+      ._CancelSQL
+       ._Cancelar(DataSource);
 end;
 
 procedure TFrmCadProdutos.BtnExcluirClick(Sender: TObject);
 begin
-  FDelete
-    := TControllerCrud
-      .New
-        ._DeleteSQL
-          ._Delete('produtos',IntToStr(dbGrid.DataSource.DataSet.Fields[0].AsInteger));
   inherited;
+  FDelete
+   := TControllerCrud
+    .New
+     ._DeleteSQL
+      ._Delete('produtos',IntToStr(dbGrid.DataSource.DataSet.Fields[0].AsInteger));
 end;
 
 procedure TFrmCadProdutos.BtnGravarClick(Sender: TObject);
 begin
+  inherited;
   if (BtnGravar.Caption = 'Editar') then
   begin
     FUpdate
-      := TControllerCrud
-        .New
-          ._UpdateSQL
-            ._Update;
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        ._Update;
   end
     else if (BtnGravar.Caption = 'Gravar') then
   begin
     FUpdate
-      := TControllerCrud
-        .New
-          ._UpdateSQL
-            ._Update;
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        ._Update;
   end;
-  inherited;
 end;
 
 procedure TFrmCadProdutos.btnNovoClick(Sender: TObject);
 begin
-  FInsert
-    := TControllerCrud
-      .New
-        ._InsertSQL
-          ._Insert('produtos',DataSource);
-
   inherited;
+  FInsert
+   := TControllerCrud
+    .New
+     ._InsertSQL
+      ._Insert('produtos',DataSource);
   edtDescricao.SetFocus;
 end;
 
@@ -114,13 +112,12 @@ end;
 
 procedure TFrmCadProdutos.FormShow(Sender: TObject);
 begin
-  FOpen
-    := TControllerCrud
-      .New
-        ._OpenSQL
-          ._Open('produtos',DataSource);
-
   inherited;
+  FOpen
+   := TControllerCrud
+    .New
+     ._OpenSQL
+      ._Open('produtos',DataSource);
 end;
 
 end.

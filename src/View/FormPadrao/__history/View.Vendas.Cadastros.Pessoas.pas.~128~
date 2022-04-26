@@ -1,0 +1,235 @@
+unit View.Vendas.Cadastros.Pessoas;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  uFrmPadrao,
+  Data.DB,
+  Vcl.Mask,
+  Vcl.DBCtrls,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  Vcl.StdCtrls,
+  Vcl.ComCtrls,
+  Vcl.ExtCtrls,
+  Controller.Crud,
+  Interfaces.Crud,
+  Funcoes;
+
+type
+  TFrmCadPessoas = class(TFrmPadrao)
+    lbRazaoNome: TLabel;
+    edtRazaoNome: TDBEdit;
+    lbFantasiaApelido: TLabel;
+    edtFantasiaApelido: TDBEdit;
+    edtTipoCadastro: TDBEdit;
+    lbTipo: TLabel;
+    lnTipoPessoa: TLabel;
+    cbTipoPessoa: TDBComboBox;
+    lbcpf_cnpj: TLabel;
+    edt_cpf_cnpj: TDBEdit;
+    lbrg_ie: TLabel;
+    edt_rg_ie: TDBEdit;
+    lbEndereco: TLabel;
+    edtEndereco: TDBEdit;
+    lbNEnde: TLabel;
+    edtNEnd: TDBEdit;
+    lbBairro: TLabel;
+    edtBairro: TDBEdit;
+    lbCidade: TLabel;
+    edtCidade: TDBEdit;
+    lbCep: TLabel;
+    edtCep: TDBEdit;
+    lbUf: TLabel;
+    cbUF: TDBComboBox;
+    lbTelefone: TLabel;
+    edtTelefone: TDBEdit;
+    lbCelular: TLabel;
+    edtCelular: TDBEdit;
+    procedure btnNovoClick(Sender: TObject);
+    procedure BtnGravarClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnExcluirClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure cbTipoPessoaChange(Sender: TObject);
+    procedure edt_cpf_cnpjKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_cpf_cnpjExit(Sender: TObject);
+  private
+    { Private declarations }
+    FOpen     : iSQLOpen;
+    FInsert   : iSQLInsert;
+    FDelete   : iSQLDelete;
+    FUpdate   : iSQLUpdate;
+    FCancelar : iSQLCancelar;
+    function TipoFormulario(aTipo : string) : string;
+    procedure RetornarRegistros();
+  public
+    { Public declarations }
+    FTipoForm : String;
+  end;
+
+var
+  FrmCadPessoas: TFrmCadPessoas;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmCadPessoas.BtnCancelarClick(Sender: TObject);
+begin
+  inherited;
+  FCancelar
+   := TControllerCrud
+    .New
+     ._CancelSQL
+      ._Cancelar(DataSource);
+  RetornarRegistros();
+end;
+
+procedure TFrmCadPessoas.BtnExcluirClick(Sender: TObject);
+begin
+  inherited;
+  FDelete
+   := TControllerCrud
+    .New
+     ._DeleteSQL
+      ._Delete('pessoas',IntToStr(dbGrid.DataSource.DataSet.Fields[0].AsInteger));
+  RetornarRegistros();
+end;
+
+procedure TFrmCadPessoas.BtnGravarClick(Sender: TObject);
+begin
+  inherited;
+  if (BtnGravar.Caption = 'Editar') then
+  begin
+    FUpdate
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        .TipoFormulario(Self.Caption)
+         ._Update('pessoas',DataSource);
+  end
+    else if (BtnGravar.Caption = 'Gravar') then
+  begin
+    FUpdate
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        .TipoFormulario(Self.Caption)
+         ._Update('pessoas',DataSource);
+  end;
+  RetornarRegistros();
+end;
+
+procedure TFrmCadPessoas.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+  FInsert
+   := TControllerCrud
+    .New
+     ._InsertSQL
+      ._Insert('pessoas',DataSource);
+  edtRazaoNome.SetFocus;
+  cbTipoPessoa.ItemIndex := 0;
+  cbTipoPessoaChange(nil);
+end;
+
+procedure TFrmCadPessoas.cbTipoPessoaChange(Sender: TObject);
+begin
+  inherited;
+  if cbTipoPessoa.ItemIndex = 0 then
+  begin
+    lbRazaoNome.Caption := 'Nome';
+    lbFantasiaApelido.Caption := 'Apelido';
+    lbcpf_cnpj.Caption := 'CPF';
+    lbrg_ie.Caption := 'RG';
+  end
+   else if cbTipoPessoa.ItemIndex = 1 then
+  begin
+    lbRazaoNome.Caption := 'Nome';
+    lbFantasiaApelido.Caption := 'Apelido';
+    lbcpf_cnpj.Caption := 'CPF';
+    lbrg_ie.Caption := 'RG';
+  end
+    else if cbTipoPessoa.ItemIndex = 2 then
+  begin
+    lbRazaoNome.Caption := 'Razão Social';
+    lbFantasiaApelido.Caption := 'Nome Fantasia';
+    lbcpf_cnpj.Caption := 'CNPJ';
+    lbrg_ie.Caption := 'IE';
+  end
+end;
+
+procedure TFrmCadPessoas.edt_cpf_cnpjExit(Sender: TObject);
+begin
+  if edt_cpf_cnpj.text <> '' then
+  begin
+    if cbTipoPessoa.ItemIndex = 0 then
+    begin
+      edt_cpf_cnpj.Text := FormataCPF(edt_cpf_cnpj.Text);
+      if ValidaCPF(edt_cpf_cnpj.Text) = false then
+      begin
+        MostraErro('Atenção... CPF: ' + edt_cpf_cnpj.Text + ' Digitado é Inválido');
+        edt_cpf_cnpj.SetFocus;
+        abort
+      end;
+    end
+     else
+    begin
+      edt_cpf_cnpj.Text := FormataCNPJ(edt_cpf_cnpj.Text);
+      if ValidaCNPJ(edt_cpf_cnpj.Text) = false then
+      begin
+        MostraErro('Atenção... CNPJ: ' + edt_cpf_cnpj.Text + ' Digitado é Inválido');
+        edt_cpf_cnpj.SetFocus;
+        abort
+      end;
+    end;
+  end;
+end;
+
+procedure TFrmCadPessoas.edt_cpf_cnpjKeyPress(Sender: TObject; var Key: Char);
+begin
+ inherited;
+ if ((key in ['0'..'9'] = false) and (word(key) <> vk_back)) then
+   key := #0;
+end;
+
+
+procedure TFrmCadPessoas.FormShow(Sender: TObject);
+begin
+  inherited;
+  RetornarRegistros();
+end;
+
+procedure TFrmCadPessoas.RetornarRegistros;
+begin
+  FOpen
+   := TControllerCrud
+    .New
+     ._OpenSQL
+      ._Open('pessoas',TipoFormulario(Self.Caption),DataSource);
+end;
+
+function TFrmCadPessoas.TipoFormulario(aTipo: string): string;
+begin
+  if (aTipo = ('Cadastro de Clientes')) then
+    Result := 'Clientes';
+  if (aTipo = 'Cadastro de Fabricantes') then
+    Result := 'Fabricantes';
+  if (aTipo = 'Cadastro de Fornecedores') then
+    Result := 'Fornecedores';
+  if (aTipo = 'Cadastro de Empresas') then
+    Result := 'Empresa';
+  if (aTipo = 'Cadastro de Funcionarios') then
+    Result := 'Funcionarios';
+end;
+end.

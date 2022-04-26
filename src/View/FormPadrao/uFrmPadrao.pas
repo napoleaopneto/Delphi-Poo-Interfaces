@@ -1,7 +1,5 @@
 unit uFrmPadrao;
-
 interface
-
 uses
   Winapi.Windows,
   Winapi.Messages,
@@ -23,7 +21,6 @@ uses
   math,
   system.strutils,
   Funcoes;
-
 type
   TFrmPadrao = class(TForm)
     pnFundo: TPanel;
@@ -45,7 +42,6 @@ type
     DataSource: TDataSource;
     lbCodigo: TLabel;
     edtCodigo: TDBEdit;
-    procedure FormActivate(Sender: TObject);
     procedure BtnSairClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
@@ -63,14 +59,10 @@ type
   public
     { Public declarations }
   end;
-
 var
   FrmPadrao: TFrmPadrao;
-
 implementation
-
 {$R *.dfm}
-
 procedure TFrmPadrao.BtnCancelarClick(Sender: TObject);
 begin
   PageControl.ActivePageIndex := 0;
@@ -78,39 +70,40 @@ begin
   TabCadastro.TabVisible := false;
   BtnGravar.Caption := 'Editar';
   DataSource.DataSet.Refresh;
-
   TratarBotoes('Cancelar');
 end;
-
 procedure TFrmPadrao.BtnExcluirClick(Sender: TObject);
 begin
   dbGrid.DataSource.DataSet.Refresh;
   PageControl.ActivePageIndex := 0;
   TratarBotoes('Novo');
 end;
-
 procedure TFrmPadrao.BtnGravarClick(Sender: TObject);
 begin
-  dbGrid.DataSource.DataSet.Refresh;
-  PageControl.ActivePageIndex := 0;
-  TratarBotoes('Novo');
+  if ValidarCampos(Self) = true then
+  begin
+    MostraAviso('Atenção... Campo Obrigatório !');
+    abort
+  end
+   else
+  begin
+    dbGrid.DataSource.DataSet.Refresh;
+    PageControl.ActivePageIndex := 0;
+    TratarBotoes('Novo');
+  end;
 end;
-
 procedure TFrmPadrao.btnNovoClick(Sender: TObject);
 begin
   PageControl.ActivePageIndex := 1;
   TabConsulta.TabVisible := false;
   TabCadastro.TabVisible := true;
   BtnGravar.Caption := 'Gravar';
-
   TratarBotoes('Gravar');
 end;
-
 procedure TFrmPadrao.BtnSairClick(Sender: TObject);
 begin
   close;
 end;
-
 procedure TFrmPadrao.Busca;
 begin
   dbGrid.DataSource.DataSet.Filter := 'codigo <> 0';
@@ -120,29 +113,22 @@ begin
        + ' OR upper('+dbGrid.DataSource.DataSet.Fields[1].FieldName+') like ' + quotedstr('%' + UpperCase(edtConsulta.Text) + '%') + ')';
   dbGrid.DataSource.DataSet.Filtered := true;
 end;
-
 procedure TFrmPadrao.dbGridDblClick(Sender: TObject);
 begin
   BtnGravar.Caption := 'Gravar';
   PageControl.ActivePageIndex := 1;
   TratarBotoes('Editar');
 end;
-
 procedure TFrmPadrao.edtConsultaChange(Sender: TObject);
 begin
   Busca();
 end;
-
-procedure TFrmPadrao.FormActivate(Sender: TObject);
+procedure TFrmPadrao.FormCreate(Sender: TObject);
 begin
   PageControl.ActivePageIndex := 0;
   TabCadastro.TabVisible := false;
-end;
-procedure TFrmPadrao.FormCreate(Sender: TObject);
-begin
   TratarBotoes('Novo');
 end;
-
 procedure TFrmPadrao.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -152,12 +138,10 @@ begin
       BtnSair.Click;
   end;
 end;
-
 procedure TFrmPadrao.FormKeyPress(Sender: TObject; var Key: Char);
 begin
   TabEnter(key);
 end;
-
 procedure TFrmPadrao.TratarBotoes(aValue: string);
 begin
   if (aValue = 'Novo') then
@@ -200,5 +184,4 @@ begin
     edtConsulta.Text := '';
   BtnSair.Enabled := true;
 end;
-
 end.

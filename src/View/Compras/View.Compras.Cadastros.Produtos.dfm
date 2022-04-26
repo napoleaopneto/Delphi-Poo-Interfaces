@@ -5,6 +5,7 @@ inherited FrmCadProdutos: TFrmCadProdutos
   TextHeight = 13
   inherited pnFundo: TPanel
     inherited PageControl: TPageControl
+      ActivePage = TabCadastro
       inherited TabConsulta: TTabSheet
         inherited pnTopTabConsulta: TPanel
           inherited lbConsultar: TLabel
@@ -14,6 +15,9 @@ inherited FrmCadProdutos: TFrmCadProdutos
       end
       inherited TabCadastro: TTabSheet
         inherited pnCentralTabCadastro: TPanel
+          inherited lbCodigo: TLabel
+            Width = 569
+          end
           object Label1: TLabel [1]
             AlignWithMargins = True
             Left = 3
@@ -32,6 +36,7 @@ inherited FrmCadProdutos: TFrmCadProdutos
             DataField = 'codigo'
           end
           object edtDescricao: TDBEdit
+            Tag = 99
             Left = 3
             Top = 64
             Width = 390
