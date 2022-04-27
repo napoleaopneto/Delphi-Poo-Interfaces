@@ -1,0 +1,58 @@
+unit View.Compras.Cadastros.SubGrupos;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  uFrmPadrao,
+  Data.DB,
+  Vcl.Mask,
+  Vcl.ExtCtrls,
+  Vcl.DBCtrls,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  Vcl.StdCtrls,
+  Vcl.ComCtrls,
+  Controller.Crud,
+  Interfaces.Crud;
+
+type
+  TFrmSubGrupos = class(TFrmPadrao)
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    FOpen     : iSQLOpen;
+    FInsert   : iSQLInsert;
+    FDelete   : iSQLDelete;
+    FUpdate   : iSQLUpdate;
+    FCancelar : iSQLCancelar;
+  end;
+
+var
+  FrmSubGrupos: TFrmSubGrupos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmSubGrupos.FormShow(Sender: TObject);
+begin
+  inherited;
+   FOpen
+   := TControllerCrud
+    .New
+     ._OpenSQL
+      ._Open('subgrupos',DataSource);
+end;
+
+end.

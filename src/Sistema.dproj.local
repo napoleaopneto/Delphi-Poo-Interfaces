@@ -2,12 +2,12 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/04/13 20:27:42.000.042,=C:\Users\netoc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/04/13 20:29:17.000.834,C:\Users\netoc\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\View.FrmPrincipal.dfm</Transaction>
     <Transaction>2022/04/13 20:29:17.000.834,C:\Users\netoc\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\View.FrmPrincipal.pas</Transaction>
+    <Transaction>2022/04/13 20:29:17.000.834,C:\Users\netoc\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\View.FrmPrincipal.dfm</Transaction>
     <Transaction>2022/04/13 20:29:58.000.625,C:\Users\netoc\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Sistema.dproj</Transaction>
     <Transaction>2022/04/14 19:15:38.000.731,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
-    <Transaction>2022/04/14 19:16:32.000.984,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\FormPadrao\uFrmPadrao.dfm</Transaction>
     <Transaction>2022/04/14 19:16:32.000.984,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\FormPadrao\uFrmPadrao.pas</Transaction>
+    <Transaction>2022/04/14 19:16:32.000.984,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\FormPadrao\uFrmPadrao.dfm</Transaction>
     <Transaction>2022/04/14 20:01:34.000.375,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
     <Transaction>2022/04/14 20:01:54.000.315,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
     <Transaction>2022/04/14 20:02:48.000.689,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Cadastro.Produtos.pas</Transaction>
@@ -33,13 +33,13 @@
     <Transaction>2022/04/16 17:52:58.000.647,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Financeiro\View.Cadastro.Bancos.dfm</Transaction>
     <Transaction>2022/04/16 17:52:58.000.647,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Financeiro\View.Cadastro.Bancos.pas</Transaction>
     <Transaction>2022/04/16 18:11:20.000.072,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
-    <Transaction>2022/04/16 18:12:12.000.916,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\RH\View.Cadastro.Funcionarios.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm</Transaction>
     <Transaction>2022/04/16 18:12:12.000.916,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\RH\View.Cadastro.Funcionarios.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
+    <Transaction>2022/04/16 18:12:12.000.916,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\RH\View.Cadastro.Funcionarios.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm</Transaction>
     <Transaction>2022/04/16 18:18:47.000.779,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
-    <Transaction>2022/04/16 18:19:32.000.450,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Cadastro.Utilitarios.dfm</Transaction>
     <Transaction>2022/04/16 18:19:32.000.450,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Cadastro.Utilitarios.pas</Transaction>
-    <Transaction>2022/04/16 18:20:43.000.792,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Cadastro.Utilitarios.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Utilitarios.Cadastros.Usuarios.dfm</Transaction>
+    <Transaction>2022/04/16 18:19:32.000.450,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Cadastro.Utilitarios.dfm</Transaction>
     <Transaction>2022/04/16 18:20:43.000.792,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Cadastro.Utilitarios.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Utilitarios.Cadastros.Usuarios.pas</Transaction>
+    <Transaction>2022/04/16 18:20:43.000.792,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Cadastro.Utilitarios.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Utilitarios\View.Utilitarios.Cadastros.Usuarios.dfm</Transaction>
     <Transaction>2022/04/16 18:25:24.000.406,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Cadastro.Produtos.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Produtos.Cadastro.Produtos.pas</Transaction>
     <Transaction>2022/04/16 18:25:24.000.406,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Cadastro.Produtos.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Produtos.Cadastro.Produtos.dfm</Transaction>
     <Transaction>2022/04/16 18:26:02.000.895,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\RH\View.Cadastro.Funcionarios.pas=</Transaction>
@@ -93,16 +93,22 @@
     <Transaction>2022/04/17 14:17:24.000.407,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
     <Transaction>2022/04/17 14:17:43.000.218,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Controller\Controller.Crud.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
     <Transaction>2022/04/19 19:17:12.000.654,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
-    <Transaction>2022/04/19 19:18:46.000.137,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Compras.Cadastros.Unidades.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
     <Transaction>2022/04/19 19:18:46.000.137,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Compras.Cadastros.Unidades.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.dfm</Transaction>
+    <Transaction>2022/04/19 19:18:46.000.137,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Compras\View.Compras.Cadastros.Unidades.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
     <Transaction>2022/04/19 19:55:24.000.291,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
-    <Transaction>2022/04/19 20:11:37.000.343,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Pessoas.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Clientes.dfm</Transaction>
     <Transaction>2022/04/19 20:11:37.000.343,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Pessoas.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Clientes.pas</Transaction>
+    <Transaction>2022/04/19 20:11:37.000.343,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Pessoas.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Clientes.dfm</Transaction>
     <Transaction>2022/04/19 20:12:22.000.279,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\FormPadrao\View.Vendas.Cadastros.Pessoas.pas=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Pessoas.pas</Transaction>
     <Transaction>2022/04/19 20:12:22.000.279,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\FormPadrao\View.Vendas.Cadastros.Pessoas.dfm=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\Vendas\View.Vendas.Cadastros.Pessoas.dfm</Transaction>
     <Transaction>2022/04/19 20:21:12.000.020,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Controller\Controller.Conexao.pas</Transaction>
     <Transaction>2022/04/21 10:06:58.000.391,D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\View\RH\View.RH.Cadastros.Funcionarios.pas=</Transaction>
     <Transaction>2022/04/21 15:36:25.000.049,=D:\Neto\GoogleDriver\Projetos\Delphi-Poo-Interfaces\src\Bibliotecas\Funcoes.pas</Transaction>
+    <Transaction>2022/04/27 08:15:30.000.725,=D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
+    <Transaction>2022/04/27 08:16:27.000.639,D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\Unit1.pas=D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\View\Compras\View.Compras.Cadastros.Grupos.pas</Transaction>
+    <Transaction>2022/04/27 08:16:27.000.639,D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\Unit1.dfm=D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\View\Compras\View.Compras.Cadastros.Grupos.dfm</Transaction>
+    <Transaction>2022/04/27 09:53:53.000.216,=D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\Unit1.pas</Transaction>
+    <Transaction>2022/04/27 09:54:32.000.677,D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\Unit1.pas=D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\View\Compras\View.Compras.Cadastros.SubGrupos.pas</Transaction>
+    <Transaction>2022/04/27 09:54:32.000.677,D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\Unit1.dfm=D:\Projetos\neto\Desktop\Exemplos\Delphi-Poo-Interfaces\src\View\Compras\View.Compras.Cadastros.SubGrupos.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Bibliotecas"/>
@@ -132,6 +138,10 @@
     <File Path="View\Compras\View.Compras.Cadastros.Produtos.dfm"/>
     <File Path="View\Compras\View.Compras.Cadastros.Unidades.pas"/>
     <File Path="View\Compras\View.Compras.Cadastros.Unidades.dfm"/>
+    <File Path="View\Compras\View.Compras.Cadastros.Grupos.pas"/>
+    <File Path="View\Compras\View.Compras.Cadastros.Grupos.dfm"/>
+    <File Path="View\Compras\View.Compras.Cadastros.SubGrupos.pas"/>
+    <File Path="View\Compras\View.Compras.Cadastros.SubGrupos.dfm"/>
     <File Path="View\Financeiro"/>
     <File Path="View\Financeiro\View.Financeiro.Cadastros.Bancos.pas"/>
     <File Path="View\Financeiro\View.Financeiro.Cadastros.Bancos.dfm"/>

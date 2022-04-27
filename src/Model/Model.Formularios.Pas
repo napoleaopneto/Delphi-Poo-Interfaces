@@ -10,7 +10,9 @@ uses
  View.Compras.Cadastros.Produtos,
  View.Vendas.Cadastros.Pessoas,
  View.Financeiro.Cadastros.Bancos,
- View.Compras.Cadastros.Unidades;
+ View.Compras.Cadastros.Unidades,
+ View.Compras.Cadastros.Grupos,
+ View.Compras.Cadastros.SubGrupos;
 
   type
     TFormulario = class(TInterfacedObject, iFormularios)
@@ -25,6 +27,8 @@ uses
         function CadastroBanco(Owner : TForm) : TFrmCadBancos;
         function CadastroUsuarios(Owner : TForm) : TFrmCadUsuarios;
         function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
+        function CadastroGrupos(Owner : TForm) : TFrmGrupos;
+        function CadastroSubGrupos(Owner : TForm) : TFrmSubGrupos;
 
         function TipoFormulario(aValue : String) : iFormularios;
     end;
@@ -32,6 +36,12 @@ uses
 implementation
 
 { tFormulario }
+
+function TFormulario.CadastroGrupos(Owner: TForm): TFrmGrupos;
+begin
+  FrmGrupos := TFrmGrupos.Create(Owner);
+  Result := FrmGrupos;
+end;
 
 function TFormulario.CadastroPessoas(Owner: TForm; aCaption : String): TFrmCadPessoas;
 begin
@@ -44,6 +54,12 @@ function tFormulario.CadastroProdutos(Owner: TForm): TFrmCadProdutos;
 begin
   FrmCadProdutos := TFrmCadProdutos.Create(Owner);
   Result := FrmCadProdutos;
+end;
+
+function TFormulario.CadastroSubGrupos(Owner: TForm): TFrmSubGrupos;
+begin
+  FrmSubGrupos := TFrmSubGrupos.Create(Owner);
+  Result := FrmSubGrupos;
 end;
 
 function TFormulario.CadastroUnidades(Owner: TForm): TFrmCadUnidade;

@@ -13,7 +13,6 @@ object FrmPrincipal: TFrmPrincipal
   Font.Style = []
   KeyPreview = True
   Menu = MainMenu
-  OldCreateOrder = True
   Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -41,10 +40,6 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Compras'
       object mComprasCadastros: TMenuItem
         Caption = 'Cadastros'
-        object mComprasCadastros_Produtos: TMenuItem
-          Caption = 'Produtos'
-          OnClick = mComprasCadastros_ProdutosClick
-        end
         object mComprasCadastros_Unidades: TMenuItem
           Caption = 'Unidades'
           OnClick = mComprasCadastros_UnidadesClick
@@ -56,6 +51,18 @@ object FrmPrincipal: TFrmPrincipal
         object mComprasCadastros_Fabricantes: TMenuItem
           Caption = 'Fabricantes'
           OnClick = mComprasCadastros_FabricantesClick
+        end
+        object mComprasCadastros_Grupos: TMenuItem
+          Caption = 'Grupos'
+          OnClick = mComprasCadastros_GruposClick
+        end
+        object mComprasCadastros_SubGrupos: TMenuItem
+          Caption = 'Sub Grupos'
+          OnClick = mComprasCadastros_SubGruposClick
+        end
+        object mComprasCadastros_Produtos: TMenuItem
+          Caption = 'Produtos/Servi'#231'os'
+          OnClick = mComprasCadastros_ProdutosClick
         end
       end
     end

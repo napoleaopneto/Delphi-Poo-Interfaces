@@ -1,0 +1,117 @@
+unit View.Compras.Cadastros.Grupos;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  uFrmPadrao,
+  Data.DB,
+  Vcl.Mask,
+  Vcl.ExtCtrls,
+  Vcl.DBCtrls,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  Vcl.StdCtrls,
+  Vcl.ComCtrls,
+  Controller.Crud,
+  Interfaces.Crud;
+
+type
+  TFrmGrupos = class(TFrmPadrao)
+    lbDescricao: TLabel;
+    edtDescricao: TDBEdit;
+    procedure btnNovoClick(Sender: TObject);
+    procedure BtnGravarClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnExcluirClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    FOpen     : iSQLOpen;
+    FInsert   : iSQLInsert;
+    FDelete   : iSQLDelete;
+    FUpdate   : iSQLUpdate;
+    FCancelar : iSQLCancelar;
+  end;
+
+var
+  FrmGrupos: TFrmGrupos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmGrupos.BtnCancelarClick(Sender: TObject);
+begin
+  inherited;
+  FCancelar
+  := TControllerCrud
+   .New
+    ._CancelSQL
+     ._Cancelar(DataSource);
+end;
+
+procedure TFrmGrupos.BtnExcluirClick(Sender: TObject);
+begin
+  FDelete
+  := TControllerCrud
+   .New
+    ._DeleteSQL
+     ._Delete('grupos',IntToStr(dbGrid.DataSource.DataSet.Fields[0].AsInteger));
+
+  inherited;
+end;
+
+procedure TFrmGrupos.BtnGravarClick(Sender: TObject);
+begin
+  inherited;
+  if (BtnGravar.Caption = 'Editar') then
+  begin
+    FUpdate
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        ._Update;
+  end
+    else if (BtnGravar.Caption = 'Gravar') then
+  begin
+    FUpdate
+     := TControllerCrud
+      .New
+       ._UpdateSQL
+        ._Update;
+  end;
+end;
+
+procedure TFrmGrupos.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+  FInsert
+   := TControllerCrud
+    .New
+     ._InsertSQL
+      ._Insert('grupos',DataSource);
+  edtDescricao.SetFocus;
+end;
+
+procedure TFrmGrupos.FormShow(Sender: TObject);
+begin
+  inherited;
+   FOpen
+   := TControllerCrud
+    .New
+     ._OpenSQL
+      ._Open('grupos',DataSource);
+end;
+
+end.

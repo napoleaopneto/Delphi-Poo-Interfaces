@@ -16,6 +16,8 @@ interface
         FFormFuncionarios   : iFormularios;
         FFormUsuarios   : iFormularios;
         FFormUnidades  : iFormularios;
+        FFormGrupos  : iFormularios;
+        FFormSubGrupos  : iFormularios;
         FForm          : iFormularios;
       public
         constructor create;
@@ -26,6 +28,8 @@ interface
         function CadastroBancos : iFormularios;
         function CadastroUsuarios : iFormularios;
         function CadastroUnidades : iFormularios;
+        function CadastroGrupos : iFormularios;
+        function CadastroSubGrupos : iFormularios;
         function _TipoForm  : iFormularios;
     end;
 
@@ -50,6 +54,13 @@ begin
   Result := FFormProdutos;
 end;
 
+function TAbrirFormularios.CadastroSubGrupos: iFormularios;
+begin
+  if Not Assigned(FFormSubGrupos) then
+    FFormSubGrupos := TFormulario.New;
+  Result := FFormSubGrupos;
+end;
+
 function TAbrirFormularios.CadastroUnidades: iFormularios;
 begin
   if Not Assigned(FFormUnidades) then
@@ -62,6 +73,13 @@ begin
   if Not Assigned(FFormUsuarios) then
     FFormUsuarios := TFormulario.New;
   Result := FFormUsuarios;
+end;
+
+function TAbrirFormularios.CadastroGrupos: iFormularios;
+begin
+  if Not Assigned(FFormGrupos) then
+    FFormGrupos := TFormulario.New;
+  Result := FFormGrupos;
 end;
 
 function TAbrirFormularios.CadastroPessoas: iFormularios;
