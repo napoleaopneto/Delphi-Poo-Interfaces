@@ -4,7 +4,7 @@
 * Desenvolver um sistema de vendas totalmente orientado a objeto com interfaces, onde consiste em um CRUD com formulários inherited e as classes de consultas, insert, update e delete totalmente dinâmicas e genéricas gerando um baixo acoplamento e uma fácil manutenção.
 
 ## DELPHI
-- [X] Compativel com todas as verões.
+- [X] Compativel com todas as versões.
 
 ## OBJECT PASCAL
 - [X] Linguagem de programação object pascal.
