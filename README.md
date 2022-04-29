@@ -1,33 +1,28 @@
-# Delphi-native 
+# DELPHI - OBJECT PASCAL + POO + INTERFACES
 
+## Objetivo do projeto
+* Desenvolver um sistema de vendas totalmente orientado a objeto com interfaces, onde consiste em um CRUD com formulários inherited e as classes de consultas, insert, update e delete totalmente dinâmicas e genéricas gerando um baixo acoplamento e uma fácil manutenção.
 
-* Projeto em desenvolvimento, onde consiste em um CRUD com formulários inherited e as classes de consultas, insert, update e delete totalmente dinâmicas e genéricas gerando um baixo acoplamento e uma fácil manutenção.
+## DELPHI
+- [X] Compativel com todas as verões.
 
+## OBJECT PASCAL
+- [X] Linguagem de programação object pascal.
 
-#### Sample - CRUD
+## POO
+- [X] Programação Orientada a Objeto.
 
-```javascript
-> Interface de "Conexão";
-> Interface de "CRUD";
-```
+## INTERFACES
+- [X] Programação Orientada a Interface.
+- [X] SOLID.
+- [X] Clean Code.
 
-#### Sample - Component
+## Sample - CRUD
+- [X] Interface de "Conexão".
+- [X] Interface de "TDataSet".
+- [X] Interface de "CRUD".
+- [X] Interface do "TSplitView".
+- [X] Interface de "Formulários".
 
-```javascript
-> Interface de "TDataSet";
-```
-
-<!-- * Interface do TSplitView; -->
-<!-- * Interface do DBGrid; -->
-
-#### Outhers
-
-```javascript
-> Interface de "Formulários"
-```
-
-### Resources
-
-* SQLite
-
-
+## Banco de Dados
+- [X] SQLite".
