@@ -1,0 +1,46 @@
+unit View.Consulta.Padrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB,
+  Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFrmConsultaPadrao = class(TForm)
+    pnPrincipal: TPanel;
+    pnTop: TPanel;
+    lbBusca: TLabel;
+    pnEdit: TPanel;
+    edtBusca: TEdit;
+    pnGrid: TPanel;
+    dbGridPadrao: TDBGrid;
+    DataSource: TDataSource;
+  private
+    { Private declarations }
+    procedure Busca();
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmConsultaPadrao: TFrmConsultaPadrao;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmConsultaPadrao.Busca;
+begin
+  dbGrid.DataSource.DataSet.Filter := 'codigo <> 0';
+  if edtConsulta.Text <> '' then
+    dbGrid.DataSource.DataSet.Filter := dbGrid.DataSource.DataSet.Filter +
+      ' and (upper(' + dbGrid.DataSource.DataSet.Fields[0].FieldName + ') like '
+      + quotedstr('%' + UpperCase(edtConsulta.Text) + '%') + ' OR upper(' +
+      dbGrid.DataSource.DataSet.Fields[1].FieldName + ') like ' +
+      quotedstr('%' + UpperCase(edtConsulta.Text) + '%') + ')';
+  dbGrid.DataSource.DataSet.Filtered := true;
+end;
+
+end.

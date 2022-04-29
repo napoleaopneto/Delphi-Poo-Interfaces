@@ -10,7 +10,8 @@ uses
   View.Financeiro.Cadastros.Bancos,
   View.Compras.Cadastros.Unidades,
   View.Compras.Cadastros.Grupos,
-  View.Compras.Cadastros.SubGrupos;
+  View.Compras.Cadastros.SubGrupos,
+  View.Consulta.Padrao;
 
   type
     iFormularios = interface
@@ -22,6 +23,7 @@ uses
       function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
       function CadastroGrupos(Owner : TForm) : TFrmGrupos;
       function CadastroSubGrupos(Owner : TForm) : TFrmSubGrupos;
+      function Consulta(Owner : TForm; aCaption : String; aTabela : String) : TFrmConsultaPadrao;
 
       function TipoFormulario(aValue : String) : iFormularios;
     end;

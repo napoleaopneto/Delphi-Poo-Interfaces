@@ -46,7 +46,6 @@ type
     edtcodsubgrupos: TDBEdit;
     edtdescsubgrupos: TDBEdit;
     lbCodBarras: TLabel;
-    dbGridCodBarras: TDBGrid;
     gpTotalizadores: TGroupBox;
     lbPrecoCusto: TLabel;
     edtPrecoCusto: TDBEdit;
@@ -56,6 +55,7 @@ type
     edtValorVenda: TDBEdit;
     lbSaldoEstoque: TLabel;
     edtSladoEstoque: TDBEdit;
+    edtCodbarras: TDBEdit;
     procedure FormShow(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
@@ -63,6 +63,8 @@ type
     procedure BtnExcluirClick(Sender: TObject);
     procedure dbGridDblClick(Sender: TObject);
     procedure edtPrecoCustoKeyPress(Sender: TObject; var Key: Char);
+    procedure edtCodFabricanteKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     FOpen     : iSQLOpen;
@@ -80,6 +82,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Controller.Formularios;
 
 procedure TFrmCadProdutos.BtnCancelarClick(Sender: TObject);
 begin
@@ -137,6 +141,20 @@ procedure TFrmCadProdutos.dbGridDblClick(Sender: TObject);
 begin
   inherited;
   edtDescricao.SetFocus;
+end;
+
+procedure TFrmCadProdutos.edtCodFabricanteKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
+begin
+  inherited;
+  if key = VK_F2 then
+  begin
+    TAbrirFormularios
+     .New
+      .Consulta
+      .Consulta(Self,'Consulta de Fabricantes','produtos')
+    .ShowModal;
+  end;
 end;
 
 procedure TFrmCadProdutos.edtPrecoCustoKeyPress(Sender: TObject; var Key: Char);

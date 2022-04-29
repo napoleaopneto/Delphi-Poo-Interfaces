@@ -12,7 +12,8 @@ uses
  View.Financeiro.Cadastros.Bancos,
  View.Compras.Cadastros.Unidades,
  View.Compras.Cadastros.Grupos,
- View.Compras.Cadastros.SubGrupos;
+ View.Compras.Cadastros.SubGrupos,
+ View.Consulta.Padrao;
 
   type
     TFormulario = class(TInterfacedObject, iFormularios)
@@ -29,6 +30,7 @@ uses
         function CadastroUnidades(Owner : TForm) : TFrmCadUnidade;
         function CadastroGrupos(Owner : TForm) : TFrmGrupos;
         function CadastroSubGrupos(Owner : TForm) : TFrmSubGrupos;
+        function Consulta(Owner : TForm; aCaption : String; aTabela : String) : TFrmConsultaPadrao;
 
         function TipoFormulario(aValue : String) : iFormularios;
     end;
@@ -72,6 +74,14 @@ function TFormulario.CadastroUsuarios(Owner: TForm): TFrmCadUsuarios;
 begin
   FrmCadUsuarios := TFrmCadUsuarios.Create(Owner);
   Result := FrmCadUsuarios;
+end;
+
+function TFormulario.Consulta(Owner: TForm; aCaption : String; aTabela : String): TFrmConsultaPadrao;
+begin
+  FrmConsultaPadrao := TFrmConsultaPadrao.Create(Owner);
+  FrmConsultaPadrao.caption := aCaption;
+  FrmConsultaPadrao.aTabela := aTabela;
+  Result := FrmConsultaPadrao;
 end;
 
 function TFormulario.CadastroBanco(Owner: TForm): TFrmCadBancos;

@@ -15,6 +15,7 @@ uses
        function CadastroUnidades : iFormularios;
        function CadastroGrupos : iFormularios;
        function CadastroSubGrupos : iFormularios;
+       function Consulta : iFormularios;
      end;
 
 implementation

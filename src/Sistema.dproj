@@ -156,6 +156,10 @@
             <Form>FrmSubGrupos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="View\FormPadrao\View.Consulta.Padrao.pas">
+            <Form>FrmConsultaPadrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

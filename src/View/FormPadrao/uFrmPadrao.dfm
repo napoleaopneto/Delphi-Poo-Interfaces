@@ -71,7 +71,6 @@ object FrmPadrao: TFrmPadrao
         Caption = 'Editar'
         TabOrder = 1
         OnClick = BtnGravarClick
-        ExplicitLeft = 2
       end
       object btnNovo: TButton
         AlignWithMargins = True
@@ -205,7 +204,7 @@ object FrmPadrao: TFrmPadrao
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 569
+            Width = 38
             Height = 13
             Align = alTop
             Caption = 'C'#243'digo'
@@ -215,7 +214,6 @@ object FrmPadrao: TFrmPadrao
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
             ParentFont = False
-            ExplicitWidth = 38
           end
           object edtCodigo: TDBEdit
             Left = 3

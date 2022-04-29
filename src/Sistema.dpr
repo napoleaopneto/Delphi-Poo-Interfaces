@@ -27,7 +27,8 @@ uses
   Controller.Conexao in 'Controller\Controller.Conexao.pas',
   Funcoes in 'Bibliotecas\Funcoes.pas',
   View.Compras.Cadastros.Grupos in 'View\Compras\View.Compras.Cadastros.Grupos.pas' {FrmGrupos},
-  View.Compras.Cadastros.SubGrupos in 'View\Compras\View.Compras.Cadastros.SubGrupos.pas' {FrmSubGrupos};
+  View.Compras.Cadastros.SubGrupos in 'View\Compras\View.Compras.Cadastros.SubGrupos.pas' {FrmSubGrupos},
+  View.Consulta.Padrao in 'View\FormPadrao\View.Consulta.Padrao.pas' {FrmConsultaPadrao};
 
 {$R *.res}
 
@@ -38,5 +39,6 @@ begin
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TFrmGrupos, FrmGrupos);
   Application.CreateForm(TFrmSubGrupos, FrmSubGrupos);
+  Application.CreateForm(TFrmConsultaPadrao, FrmConsultaPadrao);
   Application.Run;
 end.
