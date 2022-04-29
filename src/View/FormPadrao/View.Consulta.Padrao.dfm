@@ -25,10 +25,6 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 248
-    ExplicitTop = 144
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object pnTop: TPanel
       Left = 0
       Top = 0
@@ -45,6 +41,7 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
         Height = 15
         Margins.Left = 5
         Margins.Right = 5
+        Margins.Bottom = 1
         Align = alTop
         Caption = 'Buscar'
         Font.Charset = DEFAULT_CHARSET
@@ -53,15 +50,14 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 3
         ExplicitWidth = 37
       end
       object pnEdit: TPanel
         AlignWithMargins = True
         Left = 5
-        Top = 21
+        Top = 19
         Width = 657
-        Height = 26
+        Height = 28
         Margins.Left = 5
         Margins.Top = 0
         Margins.Right = 5
@@ -69,15 +65,14 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
         BevelKind = bkTile
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitLeft = 0
-        ExplicitWidth = 667
-        ExplicitHeight = 24
+        ExplicitTop = 21
+        ExplicitHeight = 26
         object edtBusca: TEdit
           AlignWithMargins = True
           Left = 1
           Top = 1
           Width = 651
-          Height = 20
+          Height = 22
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -92,10 +87,8 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
           ParentFont = False
           TabOrder = 0
           OnChange = edtBuscaChange
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 653
-          ExplicitHeight = 22
+          OnKeyDown = edtBuscaKeyDown
+          ExplicitHeight = 20
         end
       end
     end
@@ -112,8 +105,6 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
       BevelKind = bkTile
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 53
-      ExplicitHeight = 231
       object dbGridPadrao: TDBGrid
         AlignWithMargins = True
         Left = 1
@@ -133,35 +124,12 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'codigo'
-            Title.Caption = 'C'#243'digo'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = clWindowText
-            Title.Font.Height = -12
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'descricao'
-            Title.Caption = 'Descri'#231#227'o'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = clWindowText
-            Title.Font.Height = -12
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 571
-            Visible = True
-          end>
+        OnKeyPress = dbGridPadraoKeyPress
       end
     end
   end
   object DataSource: TDataSource
     Left = 627
-    Top = 100
+    Top = 60
   end
 end

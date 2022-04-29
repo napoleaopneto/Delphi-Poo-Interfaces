@@ -32,6 +32,9 @@ type
     DataSource: TDataSource;
     procedure edtBuscaChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure dbGridPadraoKeyPress(Sender: TObject; var Key: Char);
+    procedure edtBuscaKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     FOpen : iSQLOpen;
@@ -60,9 +63,40 @@ begin
   dbGridPadrao.DataSource.DataSet.Filtered := true;
 end;
 
+procedure TFrmConsultaPadrao.dbGridPadraoKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  if (key >= #32) then
+  begin
+    edtBusca.Text := key;
+    key := #0;
+    edtBusca.SetFocus;
+    edtBusca.SelStart := Length(edtBusca.Text);
+  end;
+
+  If (Key = #27) Then
+  begin
+    FOpen
+     := TControllerCrud
+      .New
+       ._OpenSQL
+      ._Open(aTabela,DataSource);
+     edtBusca.SetFocus;
+  end;
+end;
+
 procedure TFrmConsultaPadrao.edtBuscaChange(Sender: TObject);
 begin
   Busca();
+end;
+
+procedure TFrmConsultaPadrao.edtBuscaKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if (Key = VK_DOWN) then
+  begin
+    dbGridPadrao.SetFocus;
+  end;
 end;
 
 procedure TFrmConsultaPadrao.FormShow(Sender: TObject);

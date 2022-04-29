@@ -152,7 +152,7 @@ begin
     TAbrirFormularios
      .New
       .Consulta
-      .Consulta(Self,'Consulta de Fabricantes','produtos')
+      .Consulta(Self,'Consulta de Fabricantes','pessoas')
     .ShowModal;
   end;
 end;

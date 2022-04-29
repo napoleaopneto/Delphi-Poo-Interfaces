@@ -5,6 +5,13 @@ inherited FrmCadProdutos: TFrmCadProdutos
   inherited pnFundo: TPanel
     inherited PageControl: TPageControl
       ActivePage = TabCadastro
+      inherited TabConsulta: TTabSheet
+        inherited pnTopTabConsulta: TPanel
+          inherited lbConsultar: TLabel
+            Width = 569
+          end
+        end
+      end
       inherited TabCadastro: TTabSheet
         inherited pnCentralTabCadastro: TPanel
           Hint = 'Fornecedor'
