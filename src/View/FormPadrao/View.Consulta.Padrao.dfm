@@ -65,8 +65,6 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
         BevelKind = bkTile
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitTop = 21
-        ExplicitHeight = 26
         object edtBusca: TEdit
           AlignWithMargins = True
           Left = 1
@@ -88,7 +86,7 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
           TabOrder = 0
           OnChange = edtBuscaChange
           OnKeyDown = edtBuscaKeyDown
-          ExplicitHeight = 20
+          OnKeyPress = edtBuscaKeyPress
         end
       end
     end
@@ -124,7 +122,20 @@ object FrmConsultaPadrao: TFrmConsultaPadrao
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+        OnDblClick = dbGridPadraoDblClick
+        OnKeyDown = dbGridPadraoKeyDown
         OnKeyPress = dbGridPadraoKeyPress
+      end
+      object btnSair: TButton
+        Left = 627
+        Top = 207
+        Width = 17
+        Height = 16
+        Caption = 'Sair'
+        ModalResult = 1
+        TabOrder = 1
+        Visible = False
+        OnClick = btnSairClick
       end
     end
   end

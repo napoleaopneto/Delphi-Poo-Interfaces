@@ -4,6 +4,7 @@ interface
 
 uses
   Vcl.Forms,
+  Data.DB,
   View.Utilitarios.Cadastros.Usuarios,
   View.Compras.Cadastros.Produtos,
   View.Vendas.Cadastros.Pessoas,

@@ -30,11 +30,17 @@ type
     pnGrid: TPanel;
     dbGridPadrao: TDBGrid;
     DataSource: TDataSource;
+    btnSair: TButton;
     procedure edtBuscaChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dbGridPadraoKeyPress(Sender: TObject; var Key: Char);
     procedure edtBuscaKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure dbGridPadraoKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure btnSairClick(Sender: TObject);
+    procedure edtBuscaKeyPress(Sender: TObject; var Key: Char);
+    procedure dbGridPadraoDblClick(Sender: TObject);
   private
     { Private declarations }
     FOpen : iSQLOpen;
@@ -51,6 +57,11 @@ implementation
 
 {$R *.dfm}
 
+procedure TFrmConsultaPadrao.btnSairClick(Sender: TObject);
+begin
+  close;
+end;
+
 procedure TFrmConsultaPadrao.Busca;
 begin
   dbGridPadrao.DataSource.DataSet.Filter := 'codigo <> 0';
@@ -61,6 +72,20 @@ begin
       dbGridPadrao.DataSource.DataSet.Fields[1].FieldName + ') like ' +
       quotedstr('%' + UpperCase(edtBusca.Text) + '%') + ')';
   dbGridPadrao.DataSource.DataSet.Filtered := true;
+end;
+
+procedure TFrmConsultaPadrao.dbGridPadraoDblClick(Sender: TObject);
+begin
+  btnSair.Click;;
+end;
+
+procedure TFrmConsultaPadrao.dbGridPadraoKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = vk_escape then
+  begin
+    edtBusca.SetFocus;
+  end;
 end;
 
 procedure TFrmConsultaPadrao.dbGridPadraoKeyPress(Sender: TObject;
@@ -96,6 +121,19 @@ begin
   if (Key = VK_DOWN) then
   begin
     dbGridPadrao.SetFocus;
+  end;
+   if Key = vk_escape then
+  begin
+    if edtBusca.Text <> '' then
+      edtBusca.Text := '';
+  end;
+end;
+
+procedure TFrmConsultaPadrao.edtBuscaKeyPress(Sender: TObject; var Key: Char);
+begin
+   if Key = #27 then
+  begin
+    btnSair.Click;
   end;
 end;
 

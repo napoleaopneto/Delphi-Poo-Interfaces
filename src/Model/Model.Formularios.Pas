@@ -5,6 +5,9 @@ interface
 uses
  Vcl.Forms,
  Winapi.Messages,
+ strutils,
+ math,
+ Data.DB,
  Interfaces.Formularios,
  View.Utilitarios.Cadastros.Usuarios,
  View.Compras.Cadastros.Produtos,

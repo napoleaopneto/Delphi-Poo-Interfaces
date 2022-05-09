@@ -42,9 +42,9 @@ type
     lbConsultar: TLabel;
     edtConsulta: TEdit;
     dbGrid: TDBGrid;
-    DataSource: TDataSource;
     lbCodigo: TLabel;
     edtCodigo: TDBEdit;
+    DataSource: TDataSource;
     procedure BtnSairClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
@@ -151,7 +151,14 @@ begin
   if Key = vk_escape then
   begin
     if PageControl.ActivePageIndex <> 1 then
+    begin
       BtnSair.Click;
+    end;
+     if PageControl.ActivePageIndex = 1 then
+    begin
+      PageControl.ActivePageIndex := 0;
+      BtnCancelar.Click;
+    end;
   end;
 end;
 

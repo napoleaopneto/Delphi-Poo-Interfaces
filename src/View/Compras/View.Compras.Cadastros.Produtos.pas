@@ -143,8 +143,7 @@ begin
   edtDescricao.SetFocus;
 end;
 
-procedure TFrmCadProdutos.edtCodFabricanteKeyDown(Sender: TObject;
-  var Key: Word; Shift: TShiftState);
+procedure TFrmCadProdutos.edtCodFabricanteKeyDown(Sender: TObject;var Key: Word; Shift: TShiftState);
 begin
   inherited;
   if key = VK_F2 then
@@ -152,8 +151,13 @@ begin
     TAbrirFormularios
      .New
       .Consulta
-      .Consulta(Self,'Consulta de Fabricantes','pessoas')
-    .ShowModal;
+       .Consulta(Self,'Consulta de Fabricantes','pessoas')
+      .ShowModal;
+
+      ShowMessage(''
+
+
+        );
   end;
 end;
 

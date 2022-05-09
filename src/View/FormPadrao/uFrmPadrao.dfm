@@ -204,7 +204,7 @@ object FrmPadrao: TFrmPadrao
             AlignWithMargins = True
             Left = 3
             Top = 3
-            Width = 38
+            Width = 569
             Height = 13
             Align = alTop
             Caption = 'C'#243'digo'
@@ -214,13 +214,13 @@ object FrmPadrao: TFrmPadrao
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
             ParentFont = False
+            ExplicitWidth = 38
           end
           object edtCodigo: TDBEdit
             Left = 3
             Top = 18
             Width = 108
             Height = 21
-            DataSource = DataSource
             TabOrder = 0
           end
         end
@@ -228,7 +228,7 @@ object FrmPadrao: TFrmPadrao
     end
   end
   object DataSource: TDataSource
-    Left = 792
+    Left = 656
     Top = 35
   end
 end

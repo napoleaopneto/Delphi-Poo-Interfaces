@@ -5,19 +5,9 @@ inherited FrmCadProdutos: TFrmCadProdutos
   inherited pnFundo: TPanel
     inherited PageControl: TPageControl
       ActivePage = TabCadastro
-      inherited TabConsulta: TTabSheet
-        inherited pnTopTabConsulta: TPanel
-          inherited lbConsultar: TLabel
-            Width = 569
-          end
-        end
-      end
       inherited TabCadastro: TTabSheet
         inherited pnCentralTabCadastro: TPanel
           Hint = 'Fornecedor'
-          inherited lbCodigo: TLabel
-            Width = 569
-          end
           object Label1: TLabel [1]
             AlignWithMargins = True
             Left = 3
@@ -147,7 +137,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             Hint = 'Descri'#231#227'o'
             DataField = 'descricao'
-            DataSource = DataSource
             TabOrder = 1
           end
           object ckflagatv: TDBCheckBox
@@ -157,7 +146,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 17
             Caption = 'Ativo'
             DataField = 'flagatv'
-            DataSource = DataSource
             TabOrder = 0
             ValueChecked = 'False'
           end
@@ -170,7 +158,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Hint = 'Tipo do Cadastro'
             Style = csDropDownList
             DataField = 'tiporegistro'
-            DataSource = DataSource
             Items.Strings = (
               ''
               'Produto'
@@ -186,7 +173,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             Hint = 'Descri'#231#227'o T'#233'cnica'
             DataField = 'descricaotecnica'
-            DataSource = DataSource
             TabOrder = 2
           end
           object edtCodFabricante: TDBEdit
@@ -197,7 +183,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             Hint = 'Fabricante'
             DataField = 'codfabricante'
-            DataSource = DataSource
             ReadOnly = True
             TabOrder = 3
             OnKeyDown = edtCodFabricanteKeyDown
@@ -209,7 +194,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             TabStop = False
             DataField = 'descricao'
-            DataSource = DataSource
             Enabled = False
             TabOrder = 9
           end
@@ -221,7 +205,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             Hint = 'Fornecedor'
             DataField = 'codfornecedor'
-            DataSource = DataSource
             ReadOnly = True
             TabOrder = 4
           end
@@ -232,7 +215,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             TabStop = False
             DataField = 'descricao'
-            DataSource = DataSource
             Enabled = False
             TabOrder = 10
           end
@@ -244,7 +226,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             Hint = 'Fabricante'
             DataField = 'codgrupos'
-            DataSource = DataSource
             ReadOnly = True
             TabOrder = 5
           end
@@ -255,7 +236,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             TabStop = False
             DataField = 'descricao'
-            DataSource = DataSource
             Enabled = False
             TabOrder = 11
           end
@@ -267,7 +247,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             Hint = 'Fornecedor'
             DataField = 'codsugrupos'
-            DataSource = DataSource
             ReadOnly = True
             TabOrder = 6
           end
@@ -278,7 +257,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             TabStop = False
             DataField = 'descricao'
-            DataSource = DataSource
             Enabled = False
             TabOrder = 12
           end
@@ -351,7 +329,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
               Width = 79
               Height = 21
               DataField = 'precoscusto'
-              DataSource = DataSource
               TabOrder = 0
               OnKeyPress = edtPrecoCustoKeyPress
             end
@@ -361,7 +338,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
               Width = 89
               Height = 21
               DataField = 'valorvenda'
-              DataSource = DataSource
               TabOrder = 1
               OnKeyPress = edtPrecoCustoKeyPress
             end
@@ -371,7 +347,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
               Width = 84
               Height = 21
               DataField = 'valorvenda'
-              DataSource = DataSource
               TabOrder = 2
               OnKeyPress = edtPrecoCustoKeyPress
             end
@@ -381,7 +356,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
               Width = 79
               Height = 21
               DataField = 'saldoestoque'
-              DataSource = DataSource
               TabOrder = 3
               OnKeyPress = edtPrecoCustoKeyPress
             end
@@ -394,7 +368,6 @@ inherited FrmCadProdutos: TFrmCadProdutos
             Height = 21
             Hint = 'Fabricante'
             DataField = 'codbarras'
-            DataSource = DataSource
             ReadOnly = True
             TabOrder = 14
           end

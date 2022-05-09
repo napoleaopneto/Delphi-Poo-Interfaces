@@ -175,4 +175,5 @@ class function TSQLQuery.NewForm: iSQLInsert;
 begin
   Result := Self.Create;
 end;
+
 end.
