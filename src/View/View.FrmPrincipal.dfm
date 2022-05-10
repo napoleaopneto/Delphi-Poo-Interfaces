@@ -15,6 +15,7 @@ object FrmPrincipal: TFrmPrincipal
   Menu = MainMenu
   Position = poMainFormCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnPrincipal: TPanel
@@ -25,6 +26,15 @@ object FrmPrincipal: TFrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    object cbStyles: TComboBox
+      Left = 1122
+      Top = 3
+      Width = 145
+      Height = 21
+      Style = csDropDownList
+      TabOrder = 0
+      OnChange = cbStylesChange
+    end
   end
   object StatusBar: TStatusBar
     Left = 0

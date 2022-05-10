@@ -3,6 +3,8 @@ unit View.FrmPrincipal;
 interface
 
 uses
+  vcl.Styles,
+  vcl.Themes,
   Winapi.Windows,
   Winapi.Messages,
   System.SysUtils,
@@ -46,6 +48,7 @@ type
     mUtilitariosCadastros_Empresa: TMenuItem;
     mComprasCadastros_Grupos: TMenuItem;
     mComprasCadastros_SubGrupos: TMenuItem;
+    cbStyles: TComboBox;
     procedure mComprasCadastros_ProdutosClick(Sender: TObject);
     procedure mVendasCadastros_ClientesClick(Sender: TObject);
     procedure mFinanceiroCadastros_BancosClick(Sender: TObject);
@@ -58,8 +61,11 @@ type
     procedure mUtilitariosCadastros_EmpresaClick(Sender: TObject);
     procedure mComprasCadastros_GruposClick(Sender: TObject);
     procedure mComprasCadastros_SubGruposClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure cbStylesChange(Sender: TObject);
   private
     { Private declarations }
+    procedure LoadStyles;
   public
     { Public declarations }
     procedure TabEnter(Key :Char);
@@ -71,6 +77,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmPrincipal.cbStylesChange(Sender: TObject);
+begin
+  TStyleManager.TrySetStyle(cbStyles.Items[cbStyles.ItemIndex]);
+end;
 
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
@@ -95,6 +106,27 @@ begin
     Key := #0;
     Screen.ActiveForm.Perform(WM_NextDlgCtl, 0, 0);
   End;
+end;
+
+procedure TFrmPrincipal.FormShow(Sender: TObject);
+begin
+  LoadStyles;
+end;
+
+procedure TFrmPrincipal.LoadStyles;
+ var
+  ssTyles : string;
+begin
+  cbStyles.Items.BeginUpdate;
+  try
+    cbStyles.Items.Clear;
+      for ssTyles in TStyleManager.StyleNames do
+        cbStyles.Items.add(ssTyles);
+      cbStyles.Sorted := true;
+      cbStyles.ItemIndex := cbStyles.Items.IndexOf(TStyleManager.ActiveStyle.Name);
+    finally
+      cbStyles.Items.EndUpdate;
+  end;
 end;
 
 procedure TFrmPrincipal.mComprasCadastros_FabricantesClick(Sender: TObject);

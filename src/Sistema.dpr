@@ -28,7 +28,9 @@ uses
   Funcoes in 'Bibliotecas\Funcoes.pas',
   View.Compras.Cadastros.Grupos in 'View\Compras\View.Compras.Cadastros.Grupos.pas' {FrmGrupos},
   View.Compras.Cadastros.SubGrupos in 'View\Compras\View.Compras.Cadastros.SubGrupos.pas' {FrmSubGrupos},
-  View.Consulta.Padrao in 'View\FormPadrao\View.Consulta.Padrao.pas' {FrmConsultaPadrao};
+  View.Consulta.Padrao in 'View\FormPadrao\View.Consulta.Padrao.pas' {FrmConsultaPadrao},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 
